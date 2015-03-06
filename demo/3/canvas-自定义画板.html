@@ -34,8 +34,8 @@ window.onload = window.onresize =  function (){
 
 	function down(ev){
 		onoff = true;
-		oldX = ev.pageX - 10;
-		oldY = ev.pageY - 10;
+		oldX = ev.pageX - 1;
+		oldY = ev.pageY - 1;
 	}	
 
 	function up(){
@@ -44,8 +44,8 @@ window.onload = window.onresize =  function (){
 
 	function draw(ev){
 		if(onoff){
-			var disX = ev.pageX - 10,
-				disY = ev.pageY - 10;
+			var disX = ev.pageX - 1,
+				disY = ev.pageY - 1;
 
 			ctx.beginPath();
 			ctx.moveTo(oldX, oldY);
