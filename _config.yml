@@ -27,3 +27,6 @@ theme:
   name: Wei Zhou
   email: 
   tagline: 
+
+  
+  show_disclaimer: true
