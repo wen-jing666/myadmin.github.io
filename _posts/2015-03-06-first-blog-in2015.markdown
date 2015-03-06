@@ -1,0 +1,7 @@
+---
+layout: post
+title: 在github pages上的第一篇文章
+category: tech
+---
+
+终于把github pages搭建起来了，虽然是抄袭别人的，但是终归是弄出来了！！！
