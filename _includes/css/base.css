@@ -353,14 +353,3 @@
 	.add-bottom { margin-bottom: 20px !important; }
     #disqus_thread { border-top: 1px solid #EAEDEE; margin-top: 30px;}
 
-/*****************/
-.posts .post-link{
-	text-decoration: none;
-	transition: all .15s ease-in;
-}
-.posts .post-link:hover{
-	margin-left: 6px;
-}  
-.posts .post-link:hover:after{
-	content: "\2192";
-}  

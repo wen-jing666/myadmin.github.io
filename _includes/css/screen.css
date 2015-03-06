@@ -93,6 +93,14 @@ ul.posts span {
 
 ul.posts .post-link {
   color: #0894D6;
+  text-decoration: none;
+  transition: all .15s ease-in;
+}
+ul.posts .post-link:hover{
+  margin-left: 6px;
+}
+ul.posts .post-link:hover:before{
+  content: "\2192";
 }
 
 .meta {
