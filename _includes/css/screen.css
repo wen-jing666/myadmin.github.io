@@ -99,7 +99,7 @@ ul.posts .post-link {
 ul.posts .post-link:hover{
   margin-left: 6px;
 }
-ul.posts .post-link:hover:before{
+ul.posts .post-link:hover:after{
   content: "\2192";
 }
 
