@@ -1,7 +1,7 @@
 # General Jekyll Config
 markdown: kramdown
 pygments: true
-url: /
+url: http://myadmin.github.io
 lsi: false
 exclude: [LICENSE, CNAME, README.md, .gitignore]
 
@@ -28,5 +28,4 @@ theme:
   email: 
   tagline: 
 
-  
   show_disclaimer: true
