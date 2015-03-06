@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<canvas id="canvas" width="700" height="600" style="background: gray;"></canvas>
+<script type="text/javascript">
+window.onload = function (){
+	var oC = document.getElementById('canvas');
+	var oGx = oC.getContext("2d");
+	var image = new Image();
+	image.src = "face.jpg";
+	image.onload = function (){
+		oGx.drawImage(image, 10, 10);
+		var imgData = oGx.getImageData(50, 50, 200, 200);
+		oGx.putImageData(imgData, 480, 10);
+		oGx.putImageData(imgData, 480, 240, 50, 50, 200, 200);
+	};
+}
+</script>	
+</body>
+</html>

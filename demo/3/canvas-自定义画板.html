@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+<canvas id="canvas" width="600" height="400"></canvas>	
+<script type="text/javascript">
+window.onload = function (){
+	var canvas = document.getElementById('canvas');
+	var ctx = canvas.getContext("2d");
+	ctx.fillStyle = "black";
+	ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+	var onoff = false,
+		oldX = -10,
+		oldY = -10,
+		lineColor = "white",
+		lineW = 4;
+
+	canvas.addEventListener("mousemove", draw, false);
+	canvas.addEventListener("mousedown", down, false);
+	canvas.addEventListener("mouseup", up, false);
+
+	function down(ev){
+		onoff = true;
+		oldX = ev.pageX - 10;
+		oldY = ev.pageY - 10;
+	}	
+
+	function up(){
+		onoff = false;
+	}
+
+	function draw(ev){
+		if(onoff){
+			var disX = ev.pageX - 10,
+				disY = ev.pageY - 10;
+
+			ctx.beginPath();
+			ctx.moveTo(oldX, oldY);
+			ctx.lineTo(disX, disY);
+			ctx.strokeStyle = lineColor;
+			ctx.lineWidth = lineW;
+			ctx.lineCap = "round";
+			ctx.stroke();
+
+			oldX = disX;
+			oldY = disY;	
+		}
+	}
+};	
+</script>
+</body>
+</html>

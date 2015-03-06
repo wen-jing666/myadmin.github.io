@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+<canvas id="canvas" width="300" height="300" style="background:gray;"></canvas>	
+<script type="text/javascript">
+var oC = document.getElementById('canvas');
+var oGx = oC.getContext("2d");
+oGx.lineWidth = 5;
+
+oGx.beginPath();
+oGx.strokeStyle = "green";
+oGx.moveTo(40, 20);
+oGx.lineTo(100, 20);
+oGx.stroke();
+
+oGx.beginPath();
+oGx.strokeStyle = "yellow";
+oGx.moveTo(100, 20);
+oGx.arcTo(120, 20, 120, 40, 20);
+oGx.stroke();
+
+oGx.beginPath();
+oGx.strokeStyle = "red";
+oGx.moveTo(120, 40);
+oGx.lineTo(120, 70);
+oGx.stroke();
+
+oGx.beginPath();
+oGx.strokeStyle = "black";
+oGx.moveTo(120, 70);
+oGx.arcTo(120, 90, 100, 90, 20);
+oGx.stroke();
+
+oGx.beginPath();
+oGx.strokeStyle = "blue";
+oGx.moveTo(100, 90);
+oGx.lineTo(40, 90);
+oGx.stroke();
+
+oGx.beginPath();
+oGx.strokeStyle = "white";
+oGx.moveTo(40, 90);
+oGx.arcTo(20, 90, 20, 70, 20);
+oGx.stroke();
+
+oGx.beginPath();
+oGx.strokeStyle = "pink";
+oGx.moveTo(20, 70);
+oGx.lineTo(20, 40);
+oGx.stroke();
+
+oGx.beginPath();
+oGx.strokeStyle = "orange";
+oGx.moveTo(20, 40);
+oGx.arcTo(20, 20, 40, 20, 20);
+oGx.stroke();
+
+oGx.beginPath();
+oGx.strokeStyle = "red";
+oGx.moveTo(50, 150);
+oGx.lineTo(200, 150);
+oGx.arcTo(220, 150, 220, 180, 25);
+oGx.lineTo(220, 250);
+oGx.arcTo(220, 280, 100, 280, 25);
+oGx.lineTo(50, 280);
+oGx.arcTo(30, 280, 30, 260, 25);
+oGx.lineTo(30, 180);
+oGx.arcTo(30, 150, 50, 150, 25);
+oGx.stroke();
+
+</script>
+</body>
+</html>	

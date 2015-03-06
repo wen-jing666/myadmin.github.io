@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+<canvas id="canvas" width="300" height="300"></canvas>	
+<script type="text/javascript">
+var oC = document.getElementById('canvas');
+var oGx = oC.getContext("2d");
+oGx.lineWidth = 10;
+oGx.strokeStyle = 'red';
+
+oGx.lineCap = "butt";
+oGx.beginPath();
+oGx.moveTo(10, 10);
+oGx.lineTo(150, 10);
+oGx.stroke();
+
+oGx.lineCap = "round";
+oGx.beginPath();
+oGx.moveTo(10, 50);
+oGx.lineTo(150, 50);
+oGx.stroke();
+
+oGx.lineCap = "square";
+oGx.beginPath();
+oGx.moveTo(10, 100);
+oGx.lineTo(150, 100);
+oGx.stroke();
+</script>
+</body>
+</html>

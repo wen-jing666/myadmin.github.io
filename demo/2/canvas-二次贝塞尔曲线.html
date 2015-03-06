@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<canvas id="canvas" width="600" height="600" style="background: gray;"></canvas>	
+<script type="text/javascript">
+var oC = document.getElementById("canvas"),
+	oGx = oC.getContext("2d");
+
+oGx.beginPath();
+oGx.strokeStyle = "red";
+oGx.moveTo(100, 100);
+oGx.quadraticCurveTo(20, 50, 200, 20);	
+oGx.stroke();
+
+oGx.beginPath();
+oGx.strokeStyle = "blue";
+oGx.moveTo(300, 300);
+oGx.quadraticCurveTo(400, 500, 520, 280);
+oGx.stroke();	
+</script>
+</body>
+</html>

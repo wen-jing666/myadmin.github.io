@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<canvas id="canvas" width="700" height="600" style="background: gray;"></canvas>
+<script type="text/javascript">
+var oC = document.getElementById('canvas');
+var oGx = oC.getContext("2d");
+var image = new Image();
+image.src = "face.jpg";
+image.onload = function (){
+	oGx.drawImage(image, 0, 0);
+	oGx.drawImage(image, 470, 0, 200, 200);
+	oGx.drawImage(image, 100, 100, 200, 200, 470, 220, 200, 200);
+};
+</script>	
+</body>
+</html>

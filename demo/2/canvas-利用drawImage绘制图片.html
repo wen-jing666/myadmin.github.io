@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+img标签<br />
+<img id="face" src="face.jpg" alt="The Face" width="300" height="240"><br />
+canvas画板<br />
+<canvas id="canvas" width="600" height="600" style="background: gray;"></canvas>
+<script type="text/javascript">
+window.onload = function (){
+	var oC = document.getElementById('canvas');
+	var oGx = oC.getContext("2d");
+
+	var oImg = document.getElementById('face');
+	oGx.drawImage(oImg, 100, 100);
+}
+</script>	
+</body>
+</html>

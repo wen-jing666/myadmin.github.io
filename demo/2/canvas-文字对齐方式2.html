@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<canvas id="canvas" width="600" height="600" style="background: gray;"></canvas>	
+<script type="text/javascript">
+var oC = document.getElementById("canvas"),
+	oGx = oC.getContext("2d");
+
+oGx.textBaseline = 'alphabetic';
+oGx.font = '30px Arial';
+oGx.fillText('Hello World', 50, 50);
+oGx.moveTo(0, 50);
+oGx.lineTo(600, 50);
+oGx.stroke();
+
+oGx.textBaseline = 'bottom';
+oGx.font = '30px Arial';
+oGx.fillText('Hello World', 50, 100);
+oGx.moveTo(0, 100);
+oGx.lineTo(600, 100);
+oGx.stroke();
+
+oGx.textBaseline = 'hanging';
+oGx.font = '30px Arial';
+oGx.fillText('Hello World', 50, 150);
+oGx.moveTo(0, 150);
+oGx.lineTo(600, 150);
+oGx.stroke();
+
+oGx.textBaseline = 'ideographic';
+oGx.font = '30px Arial';
+oGx.fillText('Hello World', 50, 200);
+oGx.moveTo(0, 200);
+oGx.lineTo(600, 200);
+oGx.stroke();
+
+oGx.textBaseline = 'middle';
+oGx.font = '30px Arial';
+oGx.fillText('Hello World', 50, 250);
+oGx.moveTo(0, 250);
+oGx.lineTo(600, 250);
+oGx.stroke();
+
+oGx.textBaseline = 'top';
+oGx.font = '30px Arial';
+oGx.fillText('Hello World', 50, 300);
+oGx.moveTo(0, 300);
+oGx.lineTo(600, 300);
+oGx.stroke();
+</script>
+</body>
+</html>

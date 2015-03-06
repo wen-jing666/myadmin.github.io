@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<canvas id="canvas" width="600" height="600" style="background: gray;"></canvas>	
+<script type="text/javascript">
+var oC = document.getElementById("canvas"),
+	oGx = oC.getContext("2d");
+
+oGx.beginPath();
+oGx.font = "normal 30px Arial";
+oGx.fillText("Hello World (normal)", 50, 50);
+
+oGx.beginPath();
+oGx.font = "italic 30px Arial";
+oGx.fillText("Hello World (italic)", 50, 100);
+
+oGx.beginPath();
+oGx.font = "oblique 30px Arial";
+oGx.fillText("Hello World (oblique)", 50, 150);
+</script>
+</body>
+</html>

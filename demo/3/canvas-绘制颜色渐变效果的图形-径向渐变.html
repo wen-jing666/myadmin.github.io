@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<canvas id="canvas" width="600" height="600" style="background: gray;"></canvas>
+<script type="text/javascript">
+window.onload = function (){
+	var oC = document.getElementById('canvas');
+	var cx = oC.getContext("2d");
+
+	var grd = cx.createRadialGradient(100, 100, 10, 100, 100, 50);
+	grd.addColorStop(0, "#00ff00");
+	grd.addColorStop(1, "#ff0000");
+	cx.fillStyle = grd;
+	cx.fillRect(0, 0, 200, 200);
+};	
+</script>
+</body>
+</html>

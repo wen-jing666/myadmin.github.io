@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<canvas id="canvas" width="600" height="600" style="background: gray;"></canvas>	
+<script type="text/javascript">
+var oC = document.getElementById("canvas"),
+	oGx = oC.getContext("2d");
+
+oGx.moveTo(160, 0);
+oGx.lineTo(160, 600);
+oGx.stroke();
+
+oGx.beginPath();
+oGx.textAlign = 'start';
+oGx.font = '30px Arial';
+oGx.fillText("Hello World", 160, 50);
+
+oGx.beginPath();
+oGx.textAlign = 'end';
+oGx.font = '30px Arial';
+oGx.fillText("Hello World", 160, 100);
+
+oGx.beginPath();
+oGx.textAlign = 'left';
+oGx.font = '30px Arial';
+oGx.fillText("Hello World", 160, 150);
+
+oGx.beginPath();
+oGx.textAlign = 'center';
+oGx.font = '30px Arial';
+oGx.fillText("Hello World", 160, 200);
+
+oGx.beginPath();
+oGx.textAlign = 'right';
+oGx.font = '30px Arial';
+oGx.fillText("Hello World", 160, 250);
+</script>
+</body>
+</html>

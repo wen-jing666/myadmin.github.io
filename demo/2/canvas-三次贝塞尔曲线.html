@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<canvas id="canvas" width="600" height="600" style="background: gray;"></canvas>	
+<script type="text/javascript">
+var oC = document.getElementById("canvas"),
+	oGx = oC.getContext("2d");
+oGx.moveTo(68, 130);
+var cx1 = 20,
+	cy1 = 10,
+	cx2 = 268,
+	cy2 = 10,
+	endx = 268,
+	endy = 170;
+oGx.bezierCurveTo(cx1, cy1, cx2, cy2, endx, endy);
+oGx.stroke();		
+</script>
+</body>
+</html>

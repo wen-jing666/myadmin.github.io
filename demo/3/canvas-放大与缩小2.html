@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<canvas id="canvas" width="600" height="600" style="background: gray;"></canvas>
+<script type="text/javascript">
+window.onload = function (){
+	var c = document.getElementById('canvas');
+	var ctx = c.getContext("2d");
+	ctx.beginPath();
+	ctx.strokeStyle = "#000000";
+	ctx.strokeRect(50, 50, 150, 100);
+
+	ctx.scale(0.5, 0.5);
+	ctx.beginPath();
+	ctx.strokeStyle = "#cccccc";
+	ctx.strokeRect(50, 50, 150, 100);
+};	
+</script>	
+</body>
+</html>

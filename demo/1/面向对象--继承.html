@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+function People(){
+	this.type = "人";
+}	
+
+People.prototype.getType = function (){
+	alert("这是一个人");
+};
+
+function Student(name, sex){
+	People.apply(this, arguments);
+	var prop;
+	for(prop in People.prototype){
+		var proto = this.constructor.prototype;
+		if(!proto[prop]){
+			proto[prop] = People.prototype[prop];
+		}
+		proto[prop]["super"] = People.prototype;
+	}
+	this.name = name;
+	this.sex = sex;
+}
+
+Student.prototype.getName = function (){
+	return this.name;
+};
+
+var stu = new Student("xxx", "男");
+stu.getType();
+alert(stu.getName());
+</script>
+</body>
+</html>

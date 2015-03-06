@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<canvas id="canvas" width="600" height="600" style="background: gray;"></canvas>
+<script type="text/javascript">
+window.onload = function (){
+	var oC = document.getElementById('canvas');
+	var cx = oC.getContext("2d");
+
+	var img = new Image();
+	img.src = "face2.jpg";
+	img.onload = function (){
+		cx.save();
+		cx.beginPath();
+		cx.moveTo(80, 0);
+		cx.lineTo(320, 40);
+		cx.lineTo(0, 200);
+		cx.closePath();
+		cx.clip();
+		cx.setTransform((320-80)/240, 40/240, -80/240, 200/240, 80, 0);
+		cx.drawImage(img, 0, 0);
+		cx.restore();
+
+		cx.save();
+		cx.beginPath();
+		cx.moveTo(320, 40);
+		cx.lineTo(0, 200);
+		cx.lineTo(200, 150);
+		cx.closePath();
+		cx.clip();
+		cx.setTransform(200/240, (150-200)/240, (200-320)/240, (150-40)/240, 0, 200);
+		cx.drawImage(img, 0, 0-240);
+		cx.restore();
+	};
+};	
+</script>
+</body>
+</html>

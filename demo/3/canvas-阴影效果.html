@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+<canvas id="canvas" width="600" height="600" style="background: gray;"></canvas>	
+<script type="text/javascript">
+window.onload = function (){
+	var oC = document.getElementById('canvas');
+	var cx = oC.getContext("2d");
+
+	cx.shadowColor = "#ff0000";
+	cx.shadowBlur = 100;
+	cx.shadowOffsetX = 20;
+	cx.shadowOffsetY = 30;
+
+	var image = new Image();
+	image.src = "face2.jpg";
+	image.onload = function (){
+		cx.drawImage(image, 0, 0);
+	};
+};	
+</script>
+</body>
+</html>

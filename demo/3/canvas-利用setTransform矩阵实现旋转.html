@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<canvas id="canvas" width="600" height="600" style="background: gray;"></canvas>
+<script type="text/javascript">
+window.onload = function (){
+	var oC = document.getElementById('canvas');
+	var cx = oC.getContext("2d");
+
+	cx.beginPath();
+	cx.strokeStyle = "#000000";
+	cx.strokeRect(200, 50, 100, 50);
+
+	cx.transform(Math.cos(5*Math.PI/180),
+				 Math.sin(5*Math.PI/180),
+				 -Math.sin(5*Math.PI/180),
+				 Math.cos(5*Math.PI/180), 0, 0);
+	cx.beginPath();
+	cx.strokeStyle = "#cccccc";
+	cx.strokeRect(200, 50, 100, 50);
+
+	cx.transform(Math.cos(10*Math.PI/180),
+				 Math.sin(10*Math.PI/180),
+				 -Math.sin(10*Math.PI/180),
+				 Math.cos(10*Math.PI/180), 0, 0);
+	cx.beginPath();
+	cx.strokeStyle = '#999999';
+	cx.strokeRect(200, 50, 100, 50);
+};	
+</script>
+</body>
+</html>

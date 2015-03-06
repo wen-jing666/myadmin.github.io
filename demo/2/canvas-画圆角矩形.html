@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+<canvas id="canvas" width="300" height="300" style="background:gray;"></canvas>	
+<script type="text/javascript">
+var oC = document.getElementById('canvas');
+var oGx = oC.getContext("2d");
+oGx.beginPath();
+oGx.lineWidth = 5;
+oGx.strokeStyle = "red";
+oGx.moveTo(20, 20);
+oGx.lineTo(200, 20);
+oGx.arcTo(250, 28, 250, 70, 50);
+oGx.lineTo(250, 200);
+oGx.stroke();
+</script>
+</body>
+</html>	
