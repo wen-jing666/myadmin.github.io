@@ -3,12 +3,21 @@
 <head>
 	<meta charset="UTF-8">
 	<title></title>
+	<style type="text/css">
+	body{overflow: hidden;}
+	*{margin: 0; padding: 0;}
+	</style>
 </head>
 <body>
-<canvas id="canvas" width="600" height="400"></canvas>	
+<canvas id="canvas"></canvas>	
 <script type="text/javascript">
 window.onload = function (){
+	var oW = document.documentElement.clientWidth || document.body.clientWidth;
+	var oH = document.documentElement.clientHeight || document.body.clientHeight;
+
 	var canvas = document.getElementById('canvas');
+	canvas.width = oW;
+	canvas.height = oH;
 	var ctx = canvas.getContext("2d");
 	ctx.fillStyle = "black";
 	ctx.fillRect(0, 0, canvas.width, canvas.height);
