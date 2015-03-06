@@ -23,11 +23,27 @@ window.onload = function (){
   var oLogo = document.getElementById('logo');
 
   var max = rom(1,9);
-  var oImg = new Image();
-  oImg.onload = function (){
-    
-  };
-  oLogo.src = "/assets/images/logo"+max+".png";
+  var arr = [
+    '/assets/images/logo1.png',
+    '/assets/images/logo2.png',
+    '/assets/images/logo3.png',
+    '/assets/images/logo4.png',
+    '/assets/images/logo5.png',
+    '/assets/images/logo6.png',
+    '/assets/images/logo7.png',
+    '/assets/images/logo8.png'
+  ];
+
+  var count = 0;
+  for(var i = 0; i < arr.length; i++){
+    var oImg = new Image();
+
+    oImg.onload = function (){
+      count++;
+    };
+
+    oLogo.src = "/assets/images/logo"+max+".png";
+  }
 }; 
 
 function rom(n,m){
