@@ -1,7 +1,7 @@
 # General Jekyll Config
 markdown: kramdown
 pygments: true
-url: http://blog.lenage.com
+url: /
 lsi: false
 exclude: [LICENSE, CNAME, README.md, .gitignore]
 
@@ -12,24 +12,18 @@ theme:
 
   # Profile links on the left sidebar, leave blank to ignore
   social:
-    github: lenage
+    github: myadmin
     #bitbucket: philipj
-    hacker_news: lenage
+    hacker_news: myadmin
     #stackexchange: 348619
     #stackoverflow: 348619
-    twitter: heyuan
+    twitter: myadmin
     #facebook: zuck
     #tumblr: animalygifs
     #linkedin: philipjagielski
     #gplus: 110552447039675960964
 
   # "Hi, I'm _______"
-  name: Yuan He
-  email: me@lenage.com
-  tagline: "weak opinions, strongly held"
-
-  # Google Analytics key, leave blank to ignore
-  google_analytics_key: UA-34087103-1
-  google_analytics_domain: 'lenage.com'
-  # Toggle "Postings are my own" disclaimer in footer
-  show_disclaimer: true
+  name: Wei Zhou
+  email: 
+  tagline: 
