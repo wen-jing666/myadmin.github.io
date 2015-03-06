@@ -1,7 +1,7 @@
 <nav>
   <h1>Hola.</h1>
   <a href="/">
-    <img src="/assets/images/logo.png" id="logo" alt="Blog logo"/>
+    <img src="/assets/images/logo1.png" id="logo" style="width:200px; height:200px;" alt="Blog logo"/>
   </a>
   <h2>I'm <a href="/">{{ site.theme.name }}</a>.</h2>
   <hr/>
@@ -18,3 +18,15 @@
   </div> -->
   </ul>
 </nav>
+<script type="text/javascript">
+window.onload = function (){
+  var oLogo = document.getElementById('logo');
+
+  var max = rom(1,9);
+  oLogo.src = "/assets/images/logo"+max+".png";
+}; 
+
+function rom(n,m){
+  return parseInt(Math.random()*(m-n)+n);
+} 
+</script>
