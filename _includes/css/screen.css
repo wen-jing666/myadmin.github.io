@@ -197,6 +197,12 @@ nav hr {
 
 #logo {
   margin-bottom: 25px;
+  border-radius: 50%;
+  transition: all 0.2s ease-out;
+}
+
+#logo:hover{
+  transform: rotate(360deg);
 }
 
 #stalker {
