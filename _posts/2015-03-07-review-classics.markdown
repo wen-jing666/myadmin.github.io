@@ -20,23 +20,23 @@ category: read
 	<h5>display</h5>
 	<table>
 		<tr>
-			<td>值</td>
+			<td style="width: 100px;">值</td>
 			<td>none | inline | block | inline-block | list-item | run-in | table | inline-table | table-row-group | table-header-group | table-footer-group | table-row | table-column-group | table-column | table-cell | table-caption | inherit</td>
 		</tr>
 		<tr>
-			<td>初始值</td>
+			<td style="width: 100px;">初始值</td>
 			<td>inline</td>
 		</tr>
 		<tr>
-			<td>应用于</td>
+			<td style="width: 100px;">应用于</td>
 			<td>所有元素</td>
 		</tr>
 		<tr>
-			<td>继承性</td>
+			<td style="width: 100px;">继承性</td>
 			<td>无</td>
 		</tr>
 		<tr>
-			<td>计算值</td>
+			<td style="width: 100px;">计算值</td>
 			<td>对于浮动元素、定位元素和根元素可变；否则为指定值</td>
 		</tr>
 	</table>
