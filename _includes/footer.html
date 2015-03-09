@@ -11,28 +11,26 @@
 </div>
 <div id="scroll_top">返回顶部</div>
 <script type="text/javascript">
-window.onload =  function (){
-	var oScroll = document.getElementById("scroll_top");
+var oScroll = document.getElementById("scroll_top");
 
-	var timer = null;
+var timer = null;
 
-	window.onscroll = function (){
-		var oTop = document.documentElement.scrollTop || document.body.scrollTop;
+window.onscroll = function (){
+	var oTop = document.documentElement.scrollTop || document.body.scrollTop;
 
-		if(oTop > 800){
-			oScroll.style.display = "block";
-			oScroll.onclick = function (){
-				timer = setInterval(function (){
-					if(oTop <= 0){
-						clearInterval(timer);
-					}
+	if(oTop > 800){
+		oScroll.style.display = "block";
+		oScroll.onclick = function (){
+			timer = setInterval(function (){
+				if(oTop <= 0){
+					clearInterval(timer);
+				}
 
-					oTop-=100;
-					document.documentElement.scrollTop = oTop;
-					document.body.scrollTop = oTop;
-				}, 30);
-			};
-		}
-	};
-};	
+				oTop-=100;
+				document.documentElement.scrollTop = oTop;
+				document.body.scrollTop = oTop;
+			}, 30);
+		};
+	}
+};
 </script>
