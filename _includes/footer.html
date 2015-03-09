@@ -11,17 +11,20 @@
 </div>
 <div id="scroll_top">返回顶部</div>
 <script type="text/javascript">
-window.onload = function (){
+window.onload =  function (){
 	var oScroll = document.getElementById("scroll_top");
 
 	var oTop = document.documentElement.scrollTop || document.body.scrollTop;
 	
 	var timer = null;
-	oScroll.onclick = function (){
+
+	window.onscroll = function (){
+		oScroll.onclick = function (){
 		console.log(oTop);
-		timer = setInterval(function (){
-			//if()
-		}, 30);
+			timer = setInterval(function (){
+				//if()
+			}, 30);
+		};
 	};
 };	
 </script>
