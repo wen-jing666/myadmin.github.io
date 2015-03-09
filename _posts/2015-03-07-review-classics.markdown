@@ -92,20 +92,20 @@ category: read
 </ul>
 <table>
 	<tr>
-		<th width="150" textAlign="center">类型</th>
-		<th>描述</th>
+		<th width="150" align="center">类型</th>
+		<th align="center">描述</th>
 	</tr>
 	<tr>
-		<td>[foo^="bar"]</td>
-		<td>选择foo属性值以 "bar" 开头的所有元素</td>
+		<td align="center">[foo^="bar"]</td>
+		<td align="center">选择foo属性值以 "bar" 开头的所有元素</td>
 	</tr>
 	<tr>
-		<td>[foo$="bar"]</td>
-		<td>选择foo属性值以 "bar" 结尾的所有元素</td>
+		<td align="center">[foo$="bar"]</td>
+		<td align="center">选择foo属性值以 "bar" 结尾的所有元素</td>
 	</tr>
 	<tr>
-		<td>[foo*="bar"]</td>
-		<td>选择foo属性值中包含子串 "bar" 的所有元素</td>
+		<td align="center">[foo*="bar"]</td>
+		<td align="center">选择foo属性值中包含子串 "bar" 的所有元素</td>
 	</tr>
 </table>
 
