@@ -282,6 +282,7 @@ i.fa-hn {
     font-size: 20px;
     border: 1px solid gray;
     cursor: pointer;
+    display: none;
   } 
 }
 @media (max-width: 420px){

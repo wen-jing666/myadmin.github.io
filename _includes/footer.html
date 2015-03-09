@@ -19,7 +19,8 @@ window.onload =  function (){
 	window.onscroll = function (){
 		var oTop = document.documentElement.scrollTop || document.body.scrollTop;
 
-		if(oTop > 200){
+		if(oTop > 800){
+			oScroll.style.display = "block";
 			oScroll.onclick = function (){
 				timer = setInterval(function (){
 					if(oTop <= 0){
