@@ -10,7 +10,7 @@ title: blog, notes, and book writeups.
       {% unless post.categories contains 'tutorial' %}
         <li>
           <p><span>{{ post.date | date_to_string }} &raquo;</span><a class="post-link" href="{{ post.url }}">{{ post.title }}</a></p>
-          <p>{{ post.excerpt | remove: 'test' }}</p>
+          <p>{{page.excerpt}}</p>
         </li>
       {% endunless %}
     {% endfor %}
