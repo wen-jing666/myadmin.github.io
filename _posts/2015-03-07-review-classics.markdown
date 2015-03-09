@@ -90,8 +90,7 @@ category: read
 	<li>简单属性选择器</li>
 	<li>如果希望选择有某个属性的元素，而不论该属性的值是什么，可以使用一个简单属性选择器。例如：h1[class]{color: red;}</li>
 </ul>
-
-<table border="1px solid #ccc;">
+<table>
 	<tr>
 		<th width="150" align="center">类型</th>
 		<th align="center">描述</th>
@@ -109,5 +108,6 @@ category: read
 		<td align="center">选择foo属性值中包含子串 "bar" 的所有元素</td>
 	</tr>
 </table>
+
 
 		---- 未完待续 ----
