@@ -14,17 +14,24 @@
 window.onload =  function (){
 	var oScroll = document.getElementById("scroll_top");
 
-	var oTop = document.documentElement.scrollTop || document.body.scrollTop;
-	
 	var timer = null;
 
 	window.onscroll = function (){
-		oScroll.onclick = function (){
-		console.log(oTop);
-			timer = setInterval(function (){
-				//if()
-			}, 30);
-		};
+		var oTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+		if(oTop > 200){
+			oScroll.onclick = function (){
+				timer = setInterval(function (){
+					if(oTop <= 0){
+						clearInterval(timer);
+					}
+
+					oTop-=100;
+					document.documentElement.scrollTop = oTop;
+					document.body.scrollTop = oTop;
+				}, 30);
+			};
+		}
 	};
 };	
 </script>
