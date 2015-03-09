@@ -92,7 +92,7 @@ category: read
 </ul>
 <table>
 	<tr>
-		<th>类型</th>
+		<th width="120">类型</th>
 		<th>描述</th>
 	</tr>
 	<tr>
