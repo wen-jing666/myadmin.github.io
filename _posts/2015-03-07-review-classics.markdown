@@ -91,8 +91,8 @@ category: read
 	<li>如果希望选择有某个属性的元素，而不论该属性的值是什么，可以使用一个简单属性选择器。例如：h1[class]{color: red;}</li>
 </ul>
 
-	{ % highlight ruby linenos % }
-	\# some ruby code
-	{ % endhighlight % }
+		{ % highlight ruby linenos % }
+		\# some ruby code
+		{ % endhighlight % }
 
-	---- 未完待续 ----
+		---- 未完待续 ----
