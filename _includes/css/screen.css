@@ -270,3 +270,17 @@ i.fa-hn {
   font-size: smaller;
   padding-bottom: 10px
 }
+
+@media (max-width: 420px){
+  #scroll_top{
+    width: 40px;
+    height: 60px;
+    position: fixed;
+    bottom: 130px;
+    right: 8%;
+    font-size: 20px;
+    border: 1px solid gray;
+    cursor: pointer;
+  }
+}
+
