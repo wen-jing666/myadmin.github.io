@@ -32,6 +32,8 @@ window.onscroll = function (){
 				document.body.scrollTop = oTop;
 			}, 30);
 		};
+	}else if(oTop <= 0){
+		oScroll.style.display = "none";
 	}
 };
 </script>
