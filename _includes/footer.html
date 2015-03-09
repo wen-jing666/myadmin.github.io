@@ -24,6 +24,7 @@ window.onscroll = function (){
 			timer = setInterval(function (){
 				if(oTop <= 0){
 					clearInterval(timer);
+					oScroll.style.display = "none";
 				}
 
 				oTop-=100;
