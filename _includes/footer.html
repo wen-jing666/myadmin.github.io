@@ -15,9 +15,10 @@ window.onload = function (){
 	var oScroll = document.getElementById("scroll_top");
 
 	var oTop = document.documentElement.scrollTop || document.body.scrollTop;
-	console.log(oTop);
+	
 	var timer = null;
 	oScroll.onclick = function (){
+		console.log(oTop);
 		timer = setInterval(function (){
 			//if()
 		}, 30);
