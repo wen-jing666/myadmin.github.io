@@ -291,3 +291,7 @@ i.fa-hn {
   } 
 }
 
+dd {
+  display: block;
+  -webkit-margin-start: 40px;
+}
