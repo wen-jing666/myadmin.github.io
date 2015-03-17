@@ -8,27 +8,34 @@ category: read
 
 继承是从一个元素向其后代元素传递属性值所采用的机制。确定应当向一个元素应用哪些值时，用户代理不仅要考虑继承，还要考虑声明的特殊性，另外需要考虑声明本身的来源。这个过程就称为  `层叠`。
 
+<h4>特殊性</h4>
+选择器的特殊性由选择器本身的组件确定。特殊性值表述为4个部分，如：0，0，0，0。一个选择器的具体特殊性如下确定：
+<ul>
+	<li>对于选择器中给定的各个ID属性值，加0，1，0，0。</li>
+	<li>对于选择器中给定的各个类属性值、属性选择或伪类，加0，0，1，0。</li>
+	<li>对于选择器中给定的各个元素和伪元素，加0，0，0，1。</li>
+	<li>结合符和通配选择器对特殊性没有任何贡献。</li>
+</ul>
+例如，以下规则中选择器的特殊性见注释：
+
+{%highlight css%}
+h1 {color: red;}  /* specificity = 0,0,0,1 */
+p em {color: purple;}   /* specificity = 0,0,0,2 */
+.grape {color: purple;}  /* specificity = 0,0,1,0 */
+*.bright {color: yellow;}  /* specificity = 0,0,1,0 */ 
+p.bright em.dark{color: maroon;}  /* specificity = 0,0,2,2 */ 
+#id216 {color: blue;}  /* specificity = 0,1,0,0 */
+div#sidebar *[href] {color: silver;}  /* specificity = 0,1,1,1 */
+{%endhighlight%}
+
+
+
+
+
+
+
+
 
 {% highlight ruby %}
 {% endhighlight %}
 
-{%highlight css%}
-头沾湿无可避免
-伦敦总依恋雨点
-乘早机忍耐着呵欠
-完全为见你一面
-寻得到尘封小店
-回不到相恋那天
-灵气大概早被污染
-谁为了生活不变
-越渴望见面然后发现
-中间隔着那十年
-我想见的笑脸只有怀念
-不懂怎去再聊天
-像我在往日还未抽烟
-不知你怎么变迁
-似等了一百年忽已明白
-即使再见面
-成熟地表演
-不如不见
-{%endhighlight%}
