@@ -31,6 +31,7 @@ div#sidebar *[href] {color: silver;}  	/* specificity = 0,1,1,1 */
 <h4>重要性</h4>
 有时某个声明可能非常重要，超过了所有其他声明。
 CSS2.1称之为重要声明（原因显而易见），并允许在这些声明的结束分号之前插入!important来标志。
+<br />
  `p.dark{color: #333 !important; background: white;}`
 
 
