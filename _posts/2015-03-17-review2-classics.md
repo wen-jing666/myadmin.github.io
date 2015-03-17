@@ -19,12 +19,12 @@ category: read
 例如，以下规则中选择器的特殊性见注释：
 
 {%highlight css%}
-h1 {color: red;}  						/* specificity = 0,0,0,1 */
-p em {color: purple;}   				/* specificity = 0,0,0,2 */
-.grape {color: purple;}  				/* specificity = 0,0,1,0 */
-*.bright {color: yellow;} 				/* specificity = 0,0,1,0 */ 
-p.bright em.dark{color: maroon;}  		/* specificity = 0,0,2,2 */ 
-#id216 {color: blue;}  					/* specificity = 0,1,0,0 */
+h1 {color: red;}  	/* specificity = 0,0,0,1 */
+p em {color: purple;}  	/* specificity = 0,0,0,2 */
+.grape {color: purple;}  	/* specificity = 0,0,1,0 */
+*.bright {color: yellow;}  	/* specificity = 0,0,1,0 */ 
+p.bright em.dark{color: maroon;}  	/* specificity = 0,0,2,2 */ 
+#id216 {color: blue;}  	/* specificity = 0,1,0,0 */
 div#sidebar *[href] {color: silver;}  	/* specificity = 0,1,1,1 */
 {%endhighlight%}
 
