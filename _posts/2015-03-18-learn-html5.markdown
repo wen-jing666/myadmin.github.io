@@ -44,7 +44,7 @@ HTML5 引入了很多新的标记元素，根据内容类型的不同，这些�
 		<td>短语</td>
 		<td>文本和文本标记元素，例如mark、kbd、sub和sup等</td>
 	</tr>
-	<tr>
+	<tr style="border-bottom: 1px solid #ccc;">
 		<td>片段</td>
 		<td>用于定义页面片段的元素，例如article、aside和title等</td>
 	</tr>
@@ -80,9 +80,10 @@ HTML5 引入了很多新的标记元素，根据内容类型的不同，这些�
 		<td>aside</td>
 		<td>相关内容或者引文</td>
 	</tr>
-	<tr>
+	<tr style="border-bottom: 1px solid #ccc;">
 		<td>nav</td>
 		<td>导航类辅助内容</td>
 	</tr>
 </table>
+
 上面所有的元素都能用CSS设定样式。[第一个HTML5页面](http://myadmin.github.io/demo/demo-html5/1.html)
