@@ -105,17 +105,17 @@ HTML5 引入了很多新的标记元素，根据内容类型的不同，这些�
 	<tr>
 		<td>getElementById()</td>
 		<td>根据指定的id特性值查找并返回元素</td>
-		<td>`<div id="foo"></div>getElementById("foo")`</td>
+		<td> `<div id="foo"></div>getElementById("foo")` </td>
 	</tr>
 	<tr>
 		<td>getElementsByName()</td>
 		<td>返回所有name特性为指定值的元素</td>
-		<td>`<input type='text' name='foo'>`getElementsByName("foo")</td>
+		<td> `<input type='text' name='foo'>` getElementsByName("foo")</td>
 	</tr>
 	<tr style="border-bottom: 1px solid #ccc;">
 		<td>getElementsByTagName()</td>
 		<td>返回所有标签名称与指定值相匹配的元素</td>
-		<td>`<input type='text'>`getElementsByTagName("input")</td>
+		<td> `<input type='text'>` getElementsByTagName("input")</td>
 	</tr>
 </table>
 <br />
@@ -133,13 +133,13 @@ HTML5 引入了很多新的标记元素，根据内容类型的不同，这些�
 	<tr>
 		<td>querySelector()</td>
 		<td>根据指定的选择规则，返回在页面中找到的第一个匹配元素</td>
-		<td>`querySelector('input.error')`</td>
+		<td> `querySelector('input.error')` </td>
 		<td>返回第一个CSS类名为 "error" 的文本输入框</td>
 	</tr>
 	<tr style="border-bottom: 1px solid #ccc;">
 		<td>querySelectorAll()</td>
 		<td>根据指定规则返回页面中所有相匹配的元素</td>
-		<td>`querySelectorAll("#results td")`</td>
+		<td> `querySelectorAll("#results td")` </td>
 		<td>返回id值为results的元素下所有的单元格</td>
 	</tr>
 </table>
