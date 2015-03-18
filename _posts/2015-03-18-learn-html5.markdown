@@ -90,3 +90,31 @@ HTML5 引入了很多新的标记元素，根据内容类型的不同，这些�
 </table>
 <br />
 上面所有的元素都能用CSS设定样式。[第一个HTML5页面](http://myadmin.github.io/demo/demo-html5/1.html)
+
+<h3>使用 Selectors API 简化选取操作</h3>
+除了语义化元素外，HTML5还引入了一种用于查找页面DOM元素的快捷方式。
+<table>
+	<tr>
+		<th colspan="3" style="text-align: center;">以前用来查找元素的JavaScript方法</th>
+	</tr>
+	<tr style="border-bottom: 1px solid #ccc; border-top: 1px solid #ccc;">
+		<td style="text-align: center;">函  数</td>
+		<td style="text-align: center;">描  述</td>
+		<td style="text-align: center;">示  例</td>
+	</tr>
+	<tr>
+		<td>getElementById()</td>
+		<td>根据指定的id特性值查找并返回元素</td>
+		<td><div id="foo"></div><br />getElementById("foo")</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr style="border-bottom: 1px solid #ccc;">
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
