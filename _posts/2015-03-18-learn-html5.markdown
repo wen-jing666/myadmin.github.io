@@ -105,16 +105,41 @@ HTML5 引入了很多新的标记元素，根据内容类型的不同，这些�
 	<tr>
 		<td>getElementById()</td>
 		<td>根据指定的id特性值查找并返回元素</td>
-		<td><div id="foo"></div><br />getElementById("foo")</td>
+		<td>`<div id="foo"></div>getElementById("foo")`</td>
 	</tr>
 	<tr>
-		<td></td>
-		<td></td>
-		<td></td>
+		<td>getElementsByName()</td>
+		<td>返回所有name特性为指定值的元素</td>
+		<td>`<input type='text' name='foo'>`getElementsByName("foo")</td>
 	</tr>
 	<tr style="border-bottom: 1px solid #ccc;">
-		<td></td>
-		<td></td>
-		<td></td>
+		<td>getElementsByTagName()</td>
+		<td>返回所有标签名称与指定值相匹配的元素</td>
+		<td>`<input type='text'>`getElementsByTagName("input")</td>
+	</tr>
+</table>
+<br />
+有了新的 Selectors API 之后，可以用更精确的方式来指定希望获取的元素，而不必再用标准DOM的方式循环遍历。
+<table>
+	<tr>
+		<th colspan="3" style="text-align: center;">新QuerySelector方法</th>
+	</tr>
+	<tr style="border-bottom: 1px solid #ccc; border-top: 1px solid #ccc;">
+		<td style="text-align: center;">函  数</td>
+		<td style="text-align: center;">描  述</td>
+		<td style="text-align: center;">示  例</td>
+		<td style="text-align: center;">结  果</td>
+	</tr>
+	<tr>
+		<td>querySelector()</td>
+		<td>根据指定的选择规则，返回在页面中找到的第一个匹配元素</td>
+		<td>`querySelector('input.error')`</td>
+		<td>返回第一个CSS类名为 "error" 的文本输入框</td>
+	</tr>
+	<tr style="border-bottom: 1px solid #ccc;">
+		<td>querySelectorAll()</td>
+		<td>根据指定规则返回页面中所有相匹配的元素</td>
+		<td>`querySelectorAll("#results td")`</td>
+		<td>返回id值为results的元素下所有的单元格</td>
 	</tr>
 </table>
