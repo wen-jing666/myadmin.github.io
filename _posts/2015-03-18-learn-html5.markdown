@@ -4,3 +4,24 @@ title: 学习html5，第一节
 category: study
 ---
 
+<h2>HTML5的新功能</h2>
+
+<h3>新的 DOCTYPE 和字符集</h3>
+{%highlight css%}
+<!DOCTYPE html>
+<meta charset="utf-8">
+{%endhighlight%}
+使用 HTML5 的 DOCTYPE 会触发浏览器以标准兼容模式显示页面。
+
+<h3>新元素和旧元素</h3>
+HTML5 引入了很多新的标记元素，根据内容类型的不同，这些元素被分成7大类。
+<table>
+	<tr>
+		<th>内容类型</th>
+		<th>描  述</th>
+	</tr>
+	<tr>
+		<td>内嵌</td>
+		<td>向文档中添加其他类型的内容，例如audio、video、canvas和iframe等</td>
+	</tr>
+</table>
