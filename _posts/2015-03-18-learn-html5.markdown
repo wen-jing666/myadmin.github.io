@@ -144,3 +144,5 @@ HTML5 引入了很多新的标记元素，根据内容类型的不同，这些�
 	</tr>
 </table>
 以前在页面上跟踪用户操作很困难，但新的 Selectors API 提供了更为便捷的方法。[Selectors API 的使用](http://myadmin.github.io/demo/demo-html5/2.html)
+
+`提示：Selectors API 不仅仅只是方便，在遍历DOM的时候，Selectors API通常会比以前的子节点搜索API更快。`
