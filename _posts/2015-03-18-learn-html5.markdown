@@ -56,41 +56,37 @@ HTML5 引入了很多新的标记元素，根据内容类型的不同，这些�
 片段累的内容类型包含许多HTML5元素。HTML5定义了一种新的语义化标记来描述元素的内容。虽然语义化标记不会让你马上感受到有什么好处，但是它可以简化HTML页面设计，并且将来搜索引擎在抓取和索引网页的时候，也绝对会利用到这些元素的优势。
 
 <table>
-	<thead>
-		<tr>
-			<th rowspan="2">HTML5中新的片段类元素</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr style="border-bottom: 1px solid #ccc; border-top: 1px solid #ccc;">
-			<th>元素名</th>
-			<th>描  述</th>
-		</tr>
-		<tr>
-			<td>header</td>
-			<td>标记头部区域的内容（用于整个页面或页面中的一块区域）</td>
-		</tr>
-		<tr>
-			<td>footer</td>
-			<td>标记脚部区域的内容（用于整个页面或页面中的一块区域）</td>
-		</tr>
-		<tr>
-			<td>section</td>
-			<td>Web页面中的一块区域</td>
-		</tr>
-		<tr>
-			<td>article</td>
-			<td>独立的文章内容</td>
-		</tr>
-		<tr>
-			<td>aside</td>
-			<td>相关内容或者引文</td>
-		</tr>
-		<tr style="border-bottom: 1px solid #ccc;">
-			<td>nav</td>
-			<td>导航类辅助内容</td>
-		</tr>
-	</tbody>
+	<tr>
+		<th rowspan="2" style="text-align: center;">HTML5中新的片段类元素</th>
+	</tr>
+	<tr style="border-bottom: 1px solid #ccc; border-top: 1px solid #ccc;">
+		<td>元素名</td>
+		<td>描  述</td>
+	</tr>
+	<tr>
+		<td>header</td>
+		<td>标记头部区域的内容（用于整个页面或页面中的一块区域）</td>
+	</tr>
+	<tr>
+		<td>footer</td>
+		<td>标记脚部区域的内容（用于整个页面或页面中的一块区域）</td>
+	</tr>
+	<tr>
+		<td>section</td>
+		<td>Web页面中的一块区域</td>
+	</tr>
+	<tr>
+		<td>article</td>
+		<td>独立的文章内容</td>
+	</tr>
+	<tr>
+		<td>aside</td>
+		<td>相关内容或者引文</td>
+	</tr>
+	<tr style="border-bottom: 1px solid #ccc;">
+		<td>nav</td>
+		<td>导航类辅助内容</td>
+	</tr>
 </table>
 <br />
 上面所有的元素都能用CSS设定样式。[第一个HTML5页面](http://myadmin.github.io/demo/demo-html5/1.html)
