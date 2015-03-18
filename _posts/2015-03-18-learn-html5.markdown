@@ -49,12 +49,12 @@ HTML5 引入了很多新的标记元素，根据内容类型的不同，这些�
 		<td>用于定义页面片段的元素，例如article、aside和title等</td>
 	</tr>
 </table>
-
-上述所有类型的元素都可以通过CSS来设定样式。此外，虽然其中一些元素，如canvas、audio和video，在使用时往往需要其他API来配合，以实现细粒度控制，但它们同样可以直接使用。
 <br />
+上述所有类型的元素都可以通过CSS来设定样式。此外，虽然其中一些元素，如canvas、audio和video，在使用时往往需要其他API来配合，以实现细粒度控制，但它们同样可以直接使用。
+
 <h3>语义化标记</h3>
 片段累的内容类型包含许多HTML5元素。HTML5定义了一种新的语义化标记来描述元素的内容。虽然语义化标记不会让你马上感受到有什么好处，但是它可以简化HTML页面设计，并且将来搜索引擎在抓取和索引网页的时候，也绝对会利用到这些元素的优势。
-&gtp style="text-align: center;"&ltHTML5中新的片段类元素&gt/p&lt
+<\p style="text-align: center;"\>HTML5中新的片段类元素<\/p\>
 <table>
 	<tr style="border-bottom: 1px solid #ccc; border-top: 1px solid #ccc;">
 		<th>元素名</th>
