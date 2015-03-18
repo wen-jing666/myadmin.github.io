@@ -143,3 +143,4 @@ HTML5 引入了很多新的标记元素，根据内容类型的不同，这些�
 		<td>返回id值为results的元素下所有的单元格</td>
 	</tr>
 </table>
+以前在页面上跟踪用户操作很困难，但新的 Selectors API 提供了更为便捷的方法。[Selectors API 的使用](http://myadmin.github.io/demo/demo-html5/2.html)
