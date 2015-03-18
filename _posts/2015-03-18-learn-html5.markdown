@@ -58,7 +58,7 @@ HTML5 引入了很多新的标记元素，根据内容类型的不同，这些�
 <table>
 	<thead>
 		<tr style="text-align: center;">
-			<th>HTML5中新的片段类元素</th>
+			<th style="width: 597px;">HTML5中新的片段类元素</th>
 		</tr>
 	</thead>
 	<tbody>
