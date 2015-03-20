@@ -12,3 +12,11 @@ Transform字面上的意思就是变形，改变的意思。
 	transform : none | <transform-function> [ <transform-function> ]*  
 ==> transform : rotate | scale | skew | translate | matrix;	
 {% endhighlight %}
+
+none 表示不进行变换；
+`<transform-function>`表示一个或多个变换函数，已空格分开；
+也就是说我们可以同时对一个元素进行transform的多种属性操作。
+
+<h4>旋转rotate</h4>
+`rotate(<angle>)`：通过指定的角度参数对原元素指定一个 2D 旋转，需要先定义transform-origin属性。
+transform-origin定义的是元素旋转的基点，其中angle是指旋转的角度，如果设置的值为正数，则表示顺时针旋转，反之，则表示逆时针旋转。[transform:rotate(60deg)](http://myadmin.github.io/demo/demo-css3/1.html)
