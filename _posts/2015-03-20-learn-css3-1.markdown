@@ -1,0 +1,8 @@
+---
+layout: post
+title: 关于CSS3，变形(transform)
+category: study
+---
+
+Transform字面上的意思就是变形，改变的意思。
+在CSS3中，transform主要包括以下几种：旋转`rotate`、扭曲`skew`、缩放`scale`和移动`translate`以及矩阵变形`matrix`。
