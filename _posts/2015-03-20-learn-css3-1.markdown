@@ -20,3 +20,22 @@ none 表示不进行变换；
 <h4>旋转rotate</h4>
 `rotate(<angle>)`：通过指定的角度参数对原元素指定一个 2D 旋转，需要先定义transform-origin属性。
 transform-origin定义的是元素旋转的基点，其中angle是指旋转的角度，如果设置的值为正数，则表示顺时针旋转，反之，则表示逆时针旋转。[transform:rotate(60deg)](http://myadmin.github.io/demo/demo-css3/1.html)
+
+<h4>移动translate</h4>
+移动translate主要分为`三种`情况：
+translate(x,y)表示水平方向和垂直方向同时移动[也就是X轴和Y轴同时移动]；
+translateX(x)仅表示水平方向移动[X轴移动]；
+translateY(y)仅表示垂直方向移动[Y轴移动]。
+
+translate(x,y)、translateX(x)、translateY(y)三种情况的基点默认都是元素的中心点，也可以根据transform-origin进行基点修改。
+具体查看以下demo[translate的三种情况](http://myadmin.github.io/demo/demo-css3/2.html)
+
+<h4>缩放scale</h4>
+缩放scale和移动translate是极其相识的，也是具有`三种`情况：
+scale(x,y)表示元素水平方向和垂直方向同时缩放[也就是X轴和Y轴同时缩放]；
+scaleX(x)仅表示水平方向缩放[X轴缩放]；
+scaleY(y)仅表示垂直方向缩放[Y轴缩放]。
+其中心点就是元素的中心位置，缩放基数为1，如果这个值大于1，元素就放大，反之，元素就缩小。
+具体查看以下demo[scale的三种情况](http://myadmin.github.io/demo/demo-css3/3.html)
+
+<h4>扭曲skew</h4>

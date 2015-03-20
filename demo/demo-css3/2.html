@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	*{margin: 0; padding: 0;}
+	.box{
+		width: 300px;
+		height: 200px;
+		border: 2px solid #000;
+		background: #ccc;
+		margin: 10px;
+		position: relative;
+		float: left;
+	}
+	.max{
+		width: 100px;
+		height: 100px;
+		position: absolute;
+		top:20px;
+		left: 30px; 
+	}
+	.w1{
+		z-index: 2;
+		border: 1px solid #000;
+		transform: translate(30px, 20px);
+		background: #666;
+		color: #fff;
+	}
+	.w2, .w4, .w6, .w8{
+		z-index: 1;
+		border: 1px dashed #000;
+	}
+	.w3{
+		z-index: 2;
+		border: 1px solid #000;
+		transform: translateX(60px);
+		background: #666;
+		color: #fff;
+	}
+	.w5{
+		z-index: 2;
+		border: 1px solid #000;
+		transform: translateY(60px);
+		background: #666;
+		color: #fff;
+	}
+	.w7{
+		z-index: 2;
+		border: 1px solid #000;
+		transform: translateX(60px);
+		transform-origin: left top;
+		background: #666;
+		color: #fff;
+	}
+	</style>
+</head>
+<body>
+<div class="box">
+	<div class="w1 max">transform: translate(30px, 20px)</div>
+	<div class="w2 max"></div>
+</div>	
+<div class="box">
+	<div class="w3 max">transform: translateX(60px)</div>
+	<div class="w4 max"></div>
+</div>
+<div class="box">
+	<div class="w5 max">transform: translateY(60px)</div>
+	<div class="w6 max"></div>
+</div>
+<div class="box">
+	<div class="w7 max">transform: translateX(60px);
+		transform-origin: left top;</div>
+	<div class="w8 max"></div>
+</div>
+</body>
+</html>

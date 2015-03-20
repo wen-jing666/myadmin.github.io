@@ -24,10 +24,24 @@
 	.box:hover{
 		transform: rotate(60deg);
 	}
+	.box3{
+		width: 150px;
+		height: 150px;
+		border: 1px solid #000;
+		position: absolute;
+		top: 300px;
+		left: 400px;
+		z-index: 2;
+	}
+	.box3:hover{
+		transform: rotate(45deg);
+		transform-origin: left top;
+	}
 	</style>
 </head>
 <body>
-<div class="box">1</div>	
+<div class="box">transform-origin: center center;</div>	
 <div class="box2"></div>
+<div class="box3">transform-origin: left top;</div>
 </body>
 </html>
