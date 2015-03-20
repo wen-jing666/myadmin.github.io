@@ -39,4 +39,9 @@ scaleY(y)仅表示垂直方向缩放[Y轴缩放]。<br />
 具体查看以下demo。 [scale的三种情况](http://myadmin.github.io/demo/demo-css3/3.html)
 
 <h4>扭曲skew</h4>
-扭曲skew和translate、scale一样，也具有三种情况：
+扭曲skew和translate、scale一样，也具有`三种`情况：<br />
+`skew(<angle> [, <angle>])`：X轴Y轴上的skew transformation (斜切变换)。第一个参数对应X轴，第二个参数对应Y轴。如果第二个参数未提供，则值为0，表示Y轴方向无斜切。<br />
+`skewX(<angle>)`：表示给定的角度沿X轴skew transformation (斜切变换)。<br />
+`skewY(<angle>)`：表示给定的角度沿Y轴skew transformation (斜切变换)。<br />
+具体查看以下demo。[skew的三种情况](http://myadmin.github.io/demo/demo-css3/4.html)
+
