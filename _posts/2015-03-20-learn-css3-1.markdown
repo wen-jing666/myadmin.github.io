@@ -6,3 +6,9 @@ category: study
 
 Transform字面上的意思就是变形，改变的意思。
 在CSS3中，transform主要包括以下几种：旋转`rotate`、扭曲`skew`、缩放`scale`和移动`translate`以及矩阵变形`matrix`。
+
+首先来看看transform的语法规则
+{% highlight ruby %}
+	transform : none | <transform-function> [ <transform-function> ]*  
+	==> transform : rotate | scale | skew | translate | matrix;	
+{% endhighlight %}
