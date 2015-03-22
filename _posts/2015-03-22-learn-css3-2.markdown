@@ -8,7 +8,15 @@ Transition在W3C标准中的描述是这样的："css的transition允许css的�
 
 首先我们来看看transition的语法规则：
 {% highlight ruby %}
-transition: [ <'transition-property'> || <'transition-duration'> || <'transition-timing-function'> || <'transition-delay'> [, [<'transition-property'> || <'transition-duration'> || <'transition-timing-function'> || <'transition-delay'>]]*
+transition: [ 
+<'transition-property'> || 
+<'transition-duration'> || 
+<'transition-timing-function'> || 
+<'transition-delay'> [, 
+[<'transition-property'> || 
+<'transition-duration'> || 
+<'transition-timing-function'> || 
+<'transition-delay'>]]*
 {% endhighlight %}
 
 transition主要包含四个属性值：<br />
@@ -45,4 +53,22 @@ transition-timing-function的值运行你根据时间的推进去改变属性值
 <h4>transition-delay</h4>
 语法：<br />
 `transition-delay : <time> [, <time>]*` <br />
-tiansition-delay是用来指定一个动画开始执行的时间，也就是说当改变元素值后多长时间开始执行transition效果，取值：<time>为数值，单位为s(秒)或者ms(毫秒)，可以作用于所有元素，其值默认是0，也就是变换立即执行，没有延迟
+tiansition-delay是用来指定一个动画开始执行的时间，也就是说当改变元素值后多长时间开始执行transition效果，取值：<time>为数值，单位为s(秒)或者ms(毫秒)，可以作用于所有元素，其值默认是0，也就是变换立即执行，没有延迟。
+
+<br />
+综合上述内容，可以总结出transition的速记法：`transition：<property> <duration> <animation type> <delay>`
+
+<br />
+下面通过几个实际的例子，加深一下对transition的理解。
+[transition(demo1)](http://myadmin.github.io/demo/demo-css3/6.html)<br />\
+`html 代码`
+{% highlight ruby %}
+<div id="box">
+	<div class="demo-box" id="linear">linear</div>
+	<div class="demo-box" id="ease">ease</div>
+	<div class="demo-box" id="ease-in">ease-in</div>
+	<div class="demo-box" id="ease-out">ease-out</div>
+	<div class="demo-box" id="ease-in-out">ease-in-out</div>
+	<div class="demo-box" id="cubic-bezier">cubic-bezier</div>
+</div>
+{% endhighlight %}
