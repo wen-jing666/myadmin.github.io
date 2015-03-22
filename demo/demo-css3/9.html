@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+	*{margin: 0; padding: 0;}
+	.box{
+		position: relative;
+		width: 500px;
+		height: 400px;
+		margin: 20px auto;
+		border: 1px solid #ccc;
+		padding: 10px;
+		box-shadow: 5px 5px 5px #ccc;
+	}
+	.box > div{
+		width: 100px;
+		height: 100px;
+		line-height: 100px;
+		font-size: 30pt;
+		position: absolute;
+		top: 160px;
+		left: 210px;
+		border-radius: 50%;
+		text-align: center;
+	}
+	.box1{
+		background: blue;
+		transition: all 1s ease-in-out;
+		z-index: 10;
+	}
+	.box2{
+		z-index: 9;
+		background: green;
+		transition-property: top, left;
+		transition-duration: 1s, 1s;
+		transition-delay: 0s, 1s;
+	}
+	.box3{
+		z-index: 8;
+		background-color: red;
+		transition-property: top, left, border-radius, background-color;
+		transition-duration: 2s, 1s, .5s, .5s;
+		transition-delay: 0s, .5s, 1s, 1.5s;
+	}
+	.box:hover .box1{
+		top: 0;
+		left: 0;
+	}
+	.box:hover .box2{
+		top: 320px;
+		left: 420px;
+	}
+	.box:hover .box3{
+		top: 0;
+		left: 420px;
+		border-radius: 0;
+		background-color: orange;
+	}
+	</style>
+</head>
+<body>
+<div class="box">
+	<div class="box1">1</div>
+	<div class="box2">2</div>
+	<div class="box3">3</div>
+</div>
+</body>
+</html>
