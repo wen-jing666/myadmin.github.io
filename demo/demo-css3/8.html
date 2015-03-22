@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+	*{margin: 0; padding: 0;}
+	.box{
+		position: relative;
+		width: 500px;
+		height: 400px;
+		margin: 20px auto;
+		border: 1px solid #ccc;
+		padding: 10px;
+		box-shadow: 5px 5px 5px #aaa;
+	}
+	.cur{
+		width: 100px;
+		height: 100px;
+		position: absolute;
+		top: 160px;
+		left: 210px;
+		background: red;
+		border-radius: 50%;
+		transition: all 2s ease-in-out;
+	}
+	.box1, .box2, .box3, .box4, .box5, .box6, .box7, .box8{
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		position: absolute;
+		top: 200px;
+		left: 250px;
+		background: navy;
+		transition: all 2s ease-out;
+		transform: translate3d(0, 0, 0);
+		color: #fff;
+		line-height: 20px;
+		text-align: center
+	}
+	.box1{
+		transition-delay: .1s;
+	}
+	.box2{
+		transition-delay: .2s;
+	}
+	.box3{
+		transition-delay: .3s;
+	}
+	.box4{
+		transition-delay: .4s;
+	}
+	.box5{
+		transition-delay: .5s;
+	}
+	.box6{
+		transition-delay: .6s;
+	}
+	.box7{
+		transition-delay: .7s;
+	}
+	.box8{
+		transition-delay: .8s;
+	}
+	.box:hover .box1{
+		transform: translate(-250px, -200px);
+	}
+	.box:hover .box2{
+		transform: translate(0, -200px);
+	}
+	.box:hover .box3{
+		transform: translate(250px, -200px);
+	}
+	.box:hover .box4{
+		transform: translate(-250px, 0);
+	}
+	.box:hover .box5{
+		transform: translate(250px, 0);
+	}
+	.box:hover .box6{
+		transform: translate(-250px, 200px);
+	}
+	.box:hover .box7{
+		transform: translate(0, 200px);
+	}
+	.box:hover .box8{
+		transform: translate(250px, 200px);
+	}
+	.box:hover .cur{
+		opacity: 0;
+	}
+	</style>
+</head>
+<body>
+<div class="box">
+	<div class="cur"></div>
+	<div class="box1">1</div>
+	<div class="box2">2</div>
+	<div class="box3">3</div>
+	<div class="box4">4</div>
+	<div class="box5">5</div>
+	<div class="box6">6</div>
+	<div class="box7">7</div>
+	<div class="box8">8</div>	
+</div>	
+</body>
+</html>
