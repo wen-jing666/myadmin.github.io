@@ -60,15 +60,15 @@ tiansition-delay是用来指定一个动画开始执行的时间，也就是说�
 
 <br />
 下面通过几个实际的例子，加深一下对transition的理解。
-[transition(demo1)](http://myadmin.github.io/demo/demo-css3/6.html)<br />\
+[transition(demo1)](http://myadmin.github.io/demo/demo-css3/6.html)<br />
 `html 代码`
 {% highlight ruby %}
 <div id="box">
-	<div class="demo-box" id="linear">linear</div>
-	<div class="demo-box" id="ease">ease</div>
-	<div class="demo-box" id="ease-in">ease-in</div>
-	<div class="demo-box" id="ease-out">ease-out</div>
-	<div class="demo-box" id="ease-in-out">ease-in-out</div>
-	<div class="demo-box" id="cubic-bezier">cubic-bezier</div>
+  <div class="demo-box" id="linear">linear</div>
+  <div class="demo-box" id="ease">ease</div>
+  <div class="demo-box" id="ease-in">ease-in</div>
+  <div class="demo-box" id="ease-out">ease-out</div>
+  <div class="demo-box" id="ease-in-out">ease-in-out</div>
+  <div class="demo-box" id="cubic-bezier">cubic-bezier</div>
 </div>
 {% endhighlight %}
