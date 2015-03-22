@@ -1,0 +1,48 @@
+---
+layout: post
+title: 关于CSS3，过渡(transition)
+category: study
+---
+
+Transition在W3C标准中的描述是这样的："css的transition允许css的属性值在一定的时间区间内平滑地过度。这种效果可以在鼠标单击、获得焦点、被点击或对元素任何改变中触发，并圆滑地以动画效果改变CSS的属性值。"
+
+首先我们来看看transition的语法规则：
+{% highlight ruby %}
+transition: [ <'transition-property'> || <'transition-duration'> || <'transition-timing-function'> || <'transition-delay'> [, [<'transition-property'> || <'transition-duration'> || <'transition-timing-function'> || <'transition-delay'>]]*
+{% endhighlight %}
+
+transition主要包含四个属性值：<br />
+执行过渡的性质：transition-property ; <br />
+执行过渡的时间：transition-duration ; <br />
+执行过渡的变化方式：transition-timing-function ; <br />
+执行过渡的延迟时间：transition-delay 。<br />
+
+下面分别来看看这几个属性。
+<h4>transition-property</h4>
+语法<br />
+`transition-property : none | all | [ <IDENT> ] [ ',' <IDENT> ]*`<br />
+transition-property是用来指定当元素中一个属性改变时执行tiansition效果，其主要值有以下几个：none(没有属性改变)；all(所有属性改变)这个也是其默认值；ident(元素属性名)。<br />
+当其值为none时，transition马上停止执行，当指定值为all时，则元素产生任何属性值变化时都将执行transition效果。
+
+<h4>transition-duration</h4>
+语法<br />
+`transition-duration : <time> [, <time>]*` <br />
+transition-duration是用来指定元素过渡的持续时间，取值：<time>为数值，单位为s(秒)或者ms(毫秒)，可以作用于所有元素，其值默认是0，也就是过渡是即时的。
+
+<h4>transition-timing-function</h4>
+语法<br />
+`transition-timing-function : ease | linear | ease-in | ease-out | cubic-bezier(<number>, <number>, <number>, <number>) [, ease | linear | ease-in | ease-out | ease-in-out | cubic-bezier(<number>，<number>, <number>, <number>)]*` <br />
+transition-timing-function的值运行你根据时间的推进去改变属性值的变换方式，它有6个可能值：
+<ol>
+	<li>ease：(逐渐减慢)默认值</li>
+	<li>linear：(匀速)</li>
+	<li>ease-in：(加速)</li>
+	<li>ease-out：(减速)</li>
+	<li>ease-in-out：(先加速然后减速)</li>
+	<li>cubic-bezier：(自定义时间曲线)</li>
+</ol>
+
+<h4>transition-delay</h4>
+语法：<br />
+`transition-delay : <time> [, <time>]*` <br />
+tiansition-delay是用来指定一个动画开始执行的时间，也就是说当改变元素值后多长时间开始执行transition效果，取值：<time>为数值，单位为s(秒)或者ms(毫秒)，可以作用于所有元素，其值默认是0，也就是变换立即执行，没有延迟
