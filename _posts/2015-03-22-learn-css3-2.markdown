@@ -143,4 +143,4 @@ tiansition-delay是用来指定一个动画开始执行的时间，也就是说�
 
 下面一起来看看第二个demo。[transition(demo2)](http://myadmin.github.io/demo/demo-css3/7.html)
 
-还有几个比较好玩的demo。[transition(demo3)](http://myadmin.github.io/demo/demo-css3/8.html) | [transition(demo4)](http://myadmin.github.io/demo/demo-css3/9.html)
+还有几个比较好玩的demo。[transition(demo3)](http://myadmin.github.io/demo/demo-css3/8.html) &nbsp;&nbsp; [transition(demo4)](http://myadmin.github.io/demo/demo-css3/9.html)
