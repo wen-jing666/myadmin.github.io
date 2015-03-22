@@ -72,3 +72,71 @@ tiansition-delay是用来指定一个动画开始执行的时间，也就是说�
   <div class="demo-box" id="cubic-bezier">cubic-bezier</div>
 </div>
 {% endhighlight %}
+
+`css 代码`
+{% highlight ruby %}
+#btn{
+	padding: 10px;
+	border: 1px solid #ccc; 
+	margin: 10px;
+	text-decoration: none;
+	display: block;
+}
+#box{
+	border: 1px solid #ccc;
+	padding: 10px;
+	width: 400px; 
+	height: 400px;	
+	margin: 10px;	
+}
+.demo-box{
+	width: 100px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	color: #fff;
+	background: #96c;
+	border-radius: 5px;
+	box-shadow: inset 0 0 5px rgba(102, 153, 0, .5);
+	margin-bottom: 10px;
+}
+#linear{
+	-webkit-transition: all 2s linear .3s;
+	transition: all 2s linear .3s;
+}
+#ease{
+	-webkit-transition: all 5s ease .3s;
+	transition: all 5s ease .3s;
+	background: #f36;   
+}
+#ease-in{
+	-webkit-transition: all 3s ease-in .2s;
+	transition: all 3s ease-in .2s;
+	background: #f36;   
+}
+#ease-out{
+	-webkit-transition: all 2s ease-out .4s;
+	transition: all 2s ease-out .4s;
+	background: #f36;   
+}
+#ease-in-out{
+	-webkit-transition: all 1s ease-in-out 0s;
+	transition: all 1s ease-in-out 0s;
+	background: #999;
+}
+#cubic-bezier{
+	-webkit-transition: all 3s cubic-bezier(.09,1.33,.09,1.34) 1s;
+    transition: all 4s cubic-bezier(.09,1.33,.09,1.34) 1s;
+    background: #6d6;
+}
+#box:hover .demo-box {
+    transform: translateX(280px) rotate(360deg) scale(1.2);
+    background: #369;
+    border: 1px solid rgba(255,230,255,08);
+    border-radius: 25px;
+    height: 50px;
+    line-height: 50px;
+    margin-bottom: 15px;
+    border-radius: 50%;
+}
+{% endhighlight %}
