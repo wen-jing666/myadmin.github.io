@@ -4,3 +4,46 @@ title: 关于CSS3，动画(animation)
 category: study
 ---
 
+从Aniamtion字面意思上，就能知道是"动画"的意思。但CSS3中的animation与HTML5中canvas绘制动画又不同，Animation只能应用在页面上已存在的DOM元素上。
+
+在开始介绍Animation之前，需要先了解一个特殊的东西，那就是"Keyframes"，我们把它叫做"关键帧"。下面我们就一起来看看这个"Keyframes"是什么东西。
+
+Keyframes具有其自己的语法规则，它的命名是由"@Keyframes"开头，后面紧接着是这个"动画的名称"加一队花括号 "{}"，括号中就是一些不同时间段样式规则，有点类似我们平时书写的CSS样式。
+
+Keyframes可以指定任何顺序排列来决定Animation动画变化的关键位置。其语法规则如下：
+{% highlight ruby %}
+keyframes-rule: '@keyframes' IDENT ' {' keyframes-blocks '}';
+keyframes-blocks: [ keyframes-selectors block ]*;
+keyframes-selectors: ['from' | 'to' | PERCENTAGE] [',' [ 'from' | 'to' | PERCENTAGE ]]*;
+{% endhighlight %}
+
+把上面的语法综合起来
+{% highlight ruby %}
+@keyframes IDENT {
+  from {
+	Properties: Properties value; 
+  }
+  Percentage {
+	Properties: Properties value;
+  }
+  to {
+	Properties: Properties value;
+  }
+}  	
+
+或者全部写成百分比的形式：
+@keyframes IDENT {
+  0% {
+	Properties: Properties value;
+  }
+  Percentage {
+	Properties: Properties value;
+  }	
+  100% {
+	Properties: Properties value;
+  }
+}
+{% endhighlight %}
+
+其中IDENT是一个动画名称，可以随便取，当然语义化一点更好，Percentage是百分比值，我们可以添加许多个这样的百分比；Properties为css的属性名，value就是其相对应的属性值。
+
