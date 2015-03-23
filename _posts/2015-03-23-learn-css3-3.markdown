@@ -90,7 +90,7 @@ keyframes定义好以后，该如何去调用刚才定义好的动画"wobble"呢
 	-webkit-animation-direction: alternate; //定义动画方式
 }
 {% endhighlight %}
-从以上demo中我们可以看出animation和transition一样有自己相对应的属性。<br />
+从以上[demo](http://myadmin.github.io/demo/demo-css3/10.html)中我们可以看出animation和transition一样有自己相对应的属性。<br />
 在animation中主要有以下几种属性：<br />
 animation-name; animation-duration; animation-timing-function; animation-delay; animation-iteration-count; animation-direction; animation-play-state。下面我们分别来看看这几个属性的使用。
 
@@ -136,8 +136,64 @@ animation-direction是用来指定元素动画播放的方向，其只有两个�
 取值说明：<br />
 animation-play-state是用来控制元素动画的播放状态，其只有两个值running和paused，默认值为running。它们的作用就类似音乐播放器的开始和暂停。
 
-上面分别介绍了animation中的各个属性的语法和取值，那么我们可以综合声明的内容，给出一个animation属性的速记法：
-`animation: [<animation-name> || <animation-duration> || <animation-timing-function> || <animation-delay> || <animation-iteration-count> || <animation-direction>] [, [<animation-name> || <animation-duration> || <animation-timing-function> || <animation-delay> || <animation-iteration-count> || <animation-direction>] ]*`
+上面分别介绍了animation中的各个属性的语法和取值，那么我们可以综合声明的内容，给出一个animation属性的速记法：<br />
+{% highlight ruby %}
+animation: [<animation-name> || <animation-duration> || <animation-timing-function> || <animation-delay> || <animation-iteration-count> || <animation-direction>] [, [<animation-name> || <animation-duration> || <animation-timing-function> || <animation-delay> || <animation-iteration-count> || <animation-direction>] ]*
+{% endhighlight %}
 
 如图所示
-<img src="http://myadmin.github.io/demo/demo-css3/animation-pro.png" style="width: 500px; height: 194px; text-align: center;">
+<img src="http://myadmin.github.io/demo/demo-css3/animation-pro.png" style="width: 500px; height: 194px; margin: 0 auto;">
+
+下面一起来看看几个关于animation的实例制作过程。<br />
+
+DEMO1：[发光变色的button](http://myadmin.github.io/demo/demo-css3/11.html)<br />
+html code: <br />
+{% highlight ruby %}
+<a href="javascript:;" class="btn">发光的button</a>
+{% endhighlight %}
+
+css code：<br />
+{% highlight ruby %}
+@-webkit-keyframes 'light'{
+	from {
+		background: rgba(96, 203, 27, .5);
+		box-shadow: inset 0 0 5px rgba(255, 255, 255, .3), 0 0 3px rgba(220, 120, 200, .5);
+		color: red;
+	}
+	25% {
+		background: rgba(196, 203, 27, .8);
+		box-shadow: inset 0 0 10px rgba(255, 155, 255, .5), 0 0 8px rgba(120, 120, 200, .8);
+		color: blue;
+	}
+	50% {
+		background: rgba(196, 203, 127, 1);
+		box-shadow: inset 0 0 5px rgba(155, 255, 255, .3), 0 0 3px rgba(220, 120, 100, 1);
+		color: orange;
+	}
+	75% {
+		background: rgba(196, 203, 27, .8);
+		box-shadow: inset 0 0 10px rgba(255, 155, 255, .5), 0 0 8px rgba(120, 120, 200, .8);
+		color: black;
+	}
+	to {
+		background: rgba(96, 203, 27, .5);
+		box-shadow: inset 0 0 5px rgba(255, 255, 255, .3), 0 0 3px rgba(220, 120, 200, .5);
+		color: green;
+	}
+}
+a.btn{
+	background: #60cb1b;
+	font-size: 16px;
+	padding: 10px 15px;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+	font-weight: bold;
+	text-shadow: 0 -1px 1px rgba(0, 0, 0, .3);
+	border-radius: 5px;
+	box-shadow: inset 0 0 5px rgba(255, 255, 255, .6), 0 0 3px rgba(220, 120, 200, .8);
+	animation-name: 'light';
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+}
+{% endhighlight %}
