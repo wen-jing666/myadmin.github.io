@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>方块旋转变圆形</title>
+<style type="text/css">
+*{margin: 0; padding: 0;}
+@-webkit-keyframes 'round'{
+	0%{
+		transform: rotate(36deg);
+		border-radius: 4px;
+	}
+	10%{
+		transform: rotate(72deg);
+		border-radius: 8px;
+	}
+	20%{
+		transform: rotate(108deg);
+		border-radius: 12px;
+	}
+	30%{
+		transform: rotate(144deg);
+		border-radius: 16px;
+	}
+	40%{
+		transform: rotate(180deg);
+		border-radius: 20px;
+	}
+	50%{
+		transform: rotate(216deg);
+		border-radius: 26px;
+	}
+	60%{
+		transform: rotate(252deg);
+		border-radius: 32px;
+	}
+	70%{
+		transform: rotate(288deg);
+		border-radius: 40px;
+	}
+	80%{
+		transform: rotate(324deg);
+		border-radius: 46px;
+	}
+	100%{
+		transform: rotate(360deg);
+		border-radius: 50px;
+	}
+}
+.box{
+	width: 100px;
+	height: 100px;
+	background: lightblue;
+	margin: 30px auto;
+}
+.box:hover{
+	border-radius: 50px;
+	background: green;
+	-webkit-animation-name: 'round';
+	-webkit-animation-duration: .56s;
+	-webkit-animation-timing-function: ease;
+	-webkit-animation-iteration-count: infinite;
+}	
+</style>
+</head>
+<body>
+<div class="box"></div>	
+</body>
+</html>
