@@ -14,7 +14,7 @@ Keyframes可以指定任何顺序排列来决定Animation动画变化的关键�
 {% highlight ruby %}
 keyframes-rule: '@keyframes' IDENT ' {' keyframes-blocks '}';
 keyframes-blocks: [ keyframes-selectors block ]*;
-keyframes-selectors: ['from' | 'to' | PERCENTAGE] [',' [ 'from' | 'to' | PERCENTAGE ]]*;
+keyframes-selectors: ['from'|'to'|PERCENTAGE][','['from'|'to'|PERCENTAGE]]*;
 {% endhighlight %}
 
 把上面的语法综合起来
@@ -45,5 +45,99 @@ keyframes-selectors: ['from' | 'to' | PERCENTAGE] [',' [ 'from' | 'to' | PERCENT
 }
 {% endhighlight %}
 
-其中IDENT是一个动画名称，可以随便取，当然语义化一点更好，Percentage是百分比值，我们可以添加许多个这样的百分比；Properties为css的属性名，value就是其相对应的属性值。
+其中IDENT是一个动画名称，可以随便取，当然语义化一点更好，Percentage是百分比值，我们可以添加许多个这样的百分比；Properties为css的属性名，value就是其相对应的属性值。由于目前支持animation动画的浏览器不统一，所以需要加上各个浏览器的私有前缀。
 
+下面一起来看一个W3C官网的实例
+{% highlight ruby %}
+@-webkit-keyframes 'wobble'{
+	0% {
+		margin-left: 100px;
+		background: green;
+	}
+	40% {
+		margin-left: 150px;
+		background: orange;
+	}
+	60% {
+		margin-left: 75px;
+		background: blue;
+	}
+	100% {
+		margin-left: 100px;
+		background: red;
+	}
+}
+{% endhighlight %}
+
+这里定义了一个叫"wobble"的动画，它的动画是从0%开始到100%时结束，中间还经历了40%和60%两个过程。
+
+keyframes定义好以后，该如何去调用刚才定义好的动画"wobble"呢？
+
+我们可以直接在一个元素中调用animation的动画属性，基于这一点，css3的animation就需要明确的动画属性值，也就是我们上面所说的，我们需要keyframes来定义不同时间段的css属性值，以达到元素在不同时间段的变化效果。
+
+下面来看看怎么给一个元素调用animation属性
+{% highlight ruby %}
+.demo{
+	width: 50px;
+	height: 50px;
+	margin-left: 100px;
+	background: blue;
+	-webkit-animation-name: 'wobble';	//动画属性名
+	-webkit-animation-duration: 10s;	//动画持续时间
+	-webkit-animation-timing-function: ease-in-out; //动画频率
+	-webkit-animation-delay: 2s;		//动画延迟时间
+	-webkit-animation-iteration-count: 10;	//定义循环次数，infinite为无限次
+	-webkit-animation-direction: alternate; //定义动画方式
+}
+{% endhighlight %}
+从以上demo中我们可以看出animation和transition一样有自己相对应的属性。<br />
+在animation中主要有以下几种属性：<br />
+animation-name; animation-duration; animation-timing-function; animation-delay; animation-iteration-count; animation-direction; animation-play-state。下面我们分别来看看这几个属性的使用。
+
+<h4>animation-name</h4>
+`语法`：<br />
+`animation-name: none | IDENT[, none | IDENT]*`;
+取值说明：<br />
+animation-name是用来定义一个动画的名称，其主要有两个值：IDENT是由keyframes创建的动画名；none为默认值，当为none时，将没有任何动画效果。
+
+<h4>animation-duration</h4>
+`语法`：<br />
+`animation-duration: <time>[, <time>]*`
+取值说明：<br />
+animation-duration是用来指定元素播放动画所持续的时间长度，取值`<time>`为数值，单位为s(秒)，默认值为0。
+
+<h4>animation-timing-function</h4>
+`语法`：<br />
+`animation-timing-function: ease | linear | ease-in | ease-out | ease-in-out | cubic-bezier(<number>, <number>, <number>, <number>) [, ease | linear | ease-in | ease-out | ease-in-out | cubic-bezier(<number>, <number>, <number>, <number>)]*`
+取值说明：<br />
+animation-timing-function是指元素根据时间的推进来改变属性值的变化速率，简单来说就是动画的播放方式。这个属性和transition中的transition-timing-function使用方式一样。
+
+<h4>animation-delay</h4>
+`语法`：<br />
+`animation-delay: <time>[, <time>]*`
+取值说明：<br />
+animation-delay是用来指定元素动画的开始时间。取值`<time>`为数值，单位为s(秒)，默认值为0。
+
+<h4>animation-iteration-count</h4>
+`语法`：<br />
+`animation-iteration-count: infinite | <number> [, infinite | <number>]*`
+取值说明：<br />
+animation-iteration-count是用来指定元素播放动画的循环次数，其可以取值`<number>`为数字，默认值为1；infinite为无限次循环。
+
+<h4>animation-direction</h4>
+`语法`：<br />
+`animation-direction: normal | alternate [, normal | alternate]*`
+取值说明：<br />
+animation-direction是用来指定元素动画播放的方向，其只有两个值，默认值为normal。如果设置为normal时，动画的每次循环都是向前播放；另一个值是alternate，它的作用是动画播放在第偶数次时向前播放，第奇数次时向反方向播放。
+
+<h4>animation-play-state</h4>
+`语法`：<br />
+`animation-play-state: running | paused [, running | paused]*`
+取值说明：<br />
+animation-play-state是用来控制元素动画的播放状态，其只有两个值running和paused，默认值为running。它们的作用就类似音乐播放器的开始和暂停。
+
+上面分别介绍了animation中的各个属性的语法和取值，那么我们可以综合声明的内容，给出一个animation属性的速记法：
+`animation: [<animation-name> || <animation-duration> || <animation-timing-function> || <animation-delay> || <animation-iteration-count> || <animation-direction>] [, [<animation-name> || <animation-duration> || <animation-timing-function> || <animation-delay> || <animation-iteration-count> || <animation-direction>] ]*`
+
+如图所示
+<img src="http://myadmin.github.io/demo/demo-css3/animation-pro.png" style="width: 500px; height: 194px; text-align: center;">
