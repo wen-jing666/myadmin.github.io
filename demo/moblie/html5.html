@@ -123,6 +123,20 @@ var listItem = [
 	}
 ];
 
+function loadImg(src, fn){
+	var oImg = new Image();
+
+	oImg.onload = function (){
+		fn && fn();
+	};
+
+	oImg.src = src
+}
+
+for(var i = 0; i < listItem.length; i++){
+	loadImg(listItem[i].img, load);
+}
+
 function Slider(opts){
 	this.wrap = opts.dom;
 	this.list = opts.list || this.getList();
@@ -282,7 +296,7 @@ Slider.prototype = {
 			}else{
 				if(self.offsetX > 50){
 					self.goIndex('-1');
-				}else if(self.offsetX < 50){
+				}else if(self.offsetX < -50){
 					self.goIndex('+1');
 				}else{
 					self.goIndex('0');
@@ -327,12 +341,18 @@ Slider.prototype = {
 
 var oBox = document.getElementById("sliderPhoto");
 
-new Slider({
-	dom: oBox,
-	list: listItem
-});
-
-
+if(listItem.length){
+	function load(){
+		new Slider({
+			dom: oBox,
+			list: listItem
+		});
+	}
+}else{
+	new Slider({
+		dom: oBox
+	});
+}
 </script>
 </body>
 </html>
