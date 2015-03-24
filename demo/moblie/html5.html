@@ -47,7 +47,7 @@ body{
 </head>
 <body>
 <div class="slider-photo" id="sliderPhoto">
-	<!-- <ul>
+	<ul>
 		<li><img src="1.jpg" alt=""></li>
 		<li><img src="2.jpg" alt=""></li>
 		<li><img src="3.jpg" alt=""></li>
@@ -62,10 +62,10 @@ body{
 		<li><img src="5.jpg" alt=""></li>
 		<li><img src="6.jpg" alt=""></li>
 		<li><img src="7.jpg" alt=""></li>
-	</ul> -->
+	</ul>
 </div>	
 <script type="text/javascript">
-var listItem = [
+/*var listItem = [
 	{
 		height: 950,
 		width: 800,
@@ -121,7 +121,9 @@ var listItem = [
 		img: "7.jpg",
 		width: 400
 	}
-];
+];*/
+
+var listItem = [];
 
 function loadImg(src, fn){
 	var oImg = new Image();
@@ -131,10 +133,6 @@ function loadImg(src, fn){
 	};
 
 	oImg.src = src
-}
-
-for(var i = 0; i < listItem.length; i++){
-	loadImg(listItem[i].img, load);
 }
 
 function Slider(opts){
@@ -342,6 +340,10 @@ Slider.prototype = {
 var oBox = document.getElementById("sliderPhoto");
 
 if(listItem.length){
+	for(var i = 0; i < listItem.length; i++){
+		loadImg(listItem[i].img, load);
+	}
+
 	function load(){
 		new Slider({
 			dom: oBox,
