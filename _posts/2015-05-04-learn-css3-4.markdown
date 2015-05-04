@@ -8,7 +8,31 @@ category: study
 
 既然这么久都没有记录任何东西，那么就趁着今天这个不是很忙的日子，再来总结一下最近学习的关于CSS3里的3D变换，记录一下自己之前学习的内容，方便后续自己使用的时候能够有资料回顾。
 
+之前学习过CSS3里面的变换(transform)，过渡(transition)以及动画(animation)，这三部分主要是讲解关于CSS3中2D空间(也叫二维空间)的，接下来在之前的基础上继续加深CSS3中3D空间的学习。
+
+关于三维变换，其实是在二维变换(transform)的基础上增加了几个函数。
+{% highlight ruby %}
+3D位移: CSS3中的3D位移主要包括translateZ()和translate3d()两个功能函数;
+3D旋转: CSS3中的3D旋转主要包括rotateX()、rotateY()、rotateZ()和rotate3d()四个功能函数;
+3D缩放: CSS3中的3D缩放主要包括scaleZ()和scale3d()两个功能函数;
+3D矩阵: CSS3中的3D矩阵和2D变换一样也是有一个3D矩阵功能函数matrix3d();
+{% endhighlight %}
+
+当然了要使用3D空间，我们首先得把我们的2D空间变成3D空间。
+
+那么该如何把当前的2D空间转变为3D空间呢？这时候就需要一个新的属性`transform-style`登场了。
+
+`transform-style`属性是3D空间的一个重要属性，它指定一个元素如何在3D空间中呈现，主要有两个属性值：`flat`和`preserve-3d`。
+
+`transform-style`有两个值，其中`flat`是默认值，表示所以子元素在2D平面呈现。而`preserve-3d`则表示所有子元素在3D空间中呈现。
+
+当然，有了`transform-style`属性也只能是完成了将2D空间转换为3D空间，但是这时候所做出来的效果，在我们视觉可视区中却不是3D显示，那么该如何让我们做出的效果看起来是3D的呢？
+
+接下来就需要看`perspective`属性了。`perspective`属性在3D变换中是至关重要的。该属性会设置观看者的位置，我们可以简单的理解为视距。总的来说，当`perspective`的值越小，用户与3D空间的Z平面距离就越近，视觉效果更令人印象深刻；反之，值越大，用户与3D空间Z平面距离越远，视觉效果就很小。
+
+下面就一起来看一个3D翻转的效果
 {% highlight ruby %}
 
 {% endhighlight %}
+
 
