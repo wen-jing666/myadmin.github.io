@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 关于javascript的面向对象
+title: javascript 面向对象(oop)
 category: study
 ---
 
-最近闲来无事，又重新温故了一下《javascript 高级程序设计》(第三版)的前六章。
+最近闲来无事，又重新温故了一下*《javascript 高级程序设计》(第三版)*的前六章。
 
 关于高程三，尤其是第六章，主要讲解了js里面的各种面向对象的写法。每看一次这章，对js的面向对象就加深了一层理解。
 
@@ -24,6 +24,11 @@ person.sayName = function (){
 {% endhighlight %}
 如上所示，创建了一个名为person的对象，并为它添加了三个属性(name、age和job)和一个方法(sayName())。这些属性在创建时都带有一些特征值，javascript通过这些特征值来定义它们的行为。
 
+###属性类型
+在ECMAScript中的属性值有两种：数据属性和访问器属性。
+>
 
+
+////////////////http://www.appinn.com/markdown/index.html
 
 
