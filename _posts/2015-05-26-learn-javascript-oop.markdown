@@ -202,7 +202,7 @@ Person.prototype = {
 	}	
 };
 {% endhighlight %}
-在上面的代码中，我们将Person.prototype设置为等于一个以对象字面量形式创建的新对象。最终结果相同，但于一个例外：constructor属性不再指向Person了。此时，尽管instanceof操作符还能返回正确的结果，但通过constructor已经无法确定对象的类型了，如下所示。
+在上面的代码中，我们将Person.prototype设置为等于一个以对象字面量形式创建的新对象。最终结果相同，但有一个例外：constructor属性不再指向Person了。此时，尽管instanceof操作符还能返回正确的结果，但通过constructor已经无法确定对象的类型了，如下所示。
 {% highlight ruby %}
 var friend = new Person();
 
@@ -211,7 +211,7 @@ alert(friend instanceof Person);		//true
 alert(friend.constructor == Person);	//false
 alert(friend.constructor == Object);	//true
 {% endhighlight %}
-在此，用instanceof操作符测试Object和Person仍然返回true，但constructor属性则等于Object而不等于Person了。如果constructor的值真的很重要，可以像下面这样特意将它设置会适当的值。
+在此，用instanceof操作符测试Object和Person仍然返回true，但constructor属性则等于Object而不等于Person了。如果constructor的值真的很重要，可以像下面这样特意将它设置回适当的值。
 {% highlight ruby %}
 function Person(){
 	
@@ -230,7 +230,10 @@ Person.prototype = {
 以上代码特意包含了一个constructor属性，并将它的值设置为Person，从而确保了通过该属性能够访问到适当的值。
 
 原型对象的问题<br/>
-原型模式也不是没有缺点。首先，它省略了为构造函数传递初始化参数这一环节，结果所有实例在默认情况下都将取得相同的属性值。虽然这会在某种程度上带来一些不方便，但这还不是原型最大的问题。原型模式最大的问题是由其共享的本性所导致的。
+原型模式也不是没有缺点。首先，它省略了为构造函数传递初始化参数这一环节，结果所有实例在默认情况下都将取得相同的属性值。虽然这会在某种程度上带来一些不方便，但这还不是原型最大的问题。`原型模式最大的问题是由其共享的本性所导致的`。因此这个问题正是我们很少看到有人单独使用原型模式的原因所在。
+
+<h4>组合使用构造函数模式和原型模式</h4>
+
 
 
 
