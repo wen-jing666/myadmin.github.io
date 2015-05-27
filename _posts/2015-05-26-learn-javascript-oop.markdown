@@ -118,6 +118,127 @@ alert(person2 instanceof Person);		//true
 构造函数模式虽然好用，但也并非没有缺点。使用构造函数的主要问题，就是每个方法都要在每个实例上重新创建一遍。
 
 <h4>原型模式</h4>
+我们创建的每个函数都有一个`prototype`(原型)属性，这个属性是一个指针，指向一个对象，而这个对象的用途是包含可以由特定类型的所有实例共享的属性和方法。如果按照字母意思来理解，那么`prototype`就是通过调用构造函数而创建的那个对象实例的原型对象。使用原型对象的好处是可以让所有对象实例共享它所包含的属性和方法。如下例子所示。
+{% highlight ruby %}
+function Person(){
+	
+}
+
+Person.prototype.name = "names";
+Person.prototype.age = 18;
+Person.prototype.job = "打杂的";
+Person.prototype.sayName = function (){
+	alert(this.name);	
+};
+
+var person1 = new Person();
+person1.sayName();		//"names"
+
+var person2 = new Person();
+person2.sayName();		//"names"
+
+alert(person1.sayName == person2.sayName);		//true
+{% endhighlight %}
+
+虽然在所有实现中都无法访问到[[Prototype]]，但可以通过isPrototypeOf()方法来确定对象之间是否存在这种关系。从本质上讲，如果[[Prototype]]指向调用isPrototypeOf()方法的对象(Person.prototype)，那么这个方法就返回true，如下所示：
+{% highlight ruby %}
+alert(Person.prototype.isPrototypeOf(person1));		//true
+alert(Person.prototype.isPrototypeOf(person2));		//true
+{% endhighlight %}
+这里，我们用原型对象的isPrototypeOf()方法测试了person1和person2。因为它们内部都有一个指向Person.prototype的指针，因此都返回了true。
+
+
+ECMAScript 5增加了一个新方法，叫Object.getPrototypeOf()，在所有支持的实现中，这个方法返回[[Prototype]]的值。例如：
+{% highlight ruby %}
+alert(Object.getPrototypeOf(person1) == Person.prototype);		//true
+alert(Object.getPrototypeOf(person1).name);						//"names"
+{% endhighlight %}
+
+使用hsaOwnProperty()方法可以检测一个属性是存在于实例中，还是存在于原型中。这个方法(不要忘了它是从Object继承来的)值在给定属性存在于对象实例中时，才会返回true。来看下面这个例子。
+{% highlight ruby %}
+function Person(){
+	
+}
+
+Person.prototype.name = "names1";
+Person.prototype.age = 25;
+Person.prototype.job = "打杂的";
+Person.prototype.sayName = function (){
+	alert(this.name);
+};
+
+var person1 = new Person();
+var person2 = new Person();
+
+alert(person1.hasOwnProperty("name"));		//false
+
+person1.name = "names2";
+alert(person1.name);						//"names2" -- 来自实例
+alert(person1.hasOwnProperty("name"));		//true
+{% endhighlight %}
+通过使用hasOwnProperty()方法，什么时候访问的是实例属性，什么时候访问的是原型属性就一清二楚了。
+
+同事使用hasOwnProperty()方法和in操作符，就可以确定该属性到底是存在于对象中，还是存在于原型中，如下所示。
+{% highlight ruby %}
+function hasPrototypeProperty(object, name){
+	return !object.hasOwnProperty(name) && (name in object);
+}
+{% endhighlight %}
+由于in操作符只要通过对象能够访问到属性就返回true，hasOwnProperty()只在属性存在于实例中时才返回true，因此只要in操作符返回true而hasOwnProperty()返回false，就可以确定属性是原型中的属性。
+
+更简单的原型语法<br/>
+前面的例子中每添加一个属性和方法，就要重新敲一遍Person.prototype。为了减少不必要的输入，也为了从视觉上更好的封装原型的功能，更常见的做饭是用一个包含所有属性和方法的`对象字面量`来重写整个原型对象，如下面的例子所示。
+{% highlight ruby %}
+function Person(){
+	
+}
+
+Person.prototype = {
+	name: "names",
+	age: 25,
+	job: "打杂的",
+	sayName: function (){
+		alert(this.name);
+	}	
+};
+{% endhighlight %}
+在上面的代码中，我们将Person.prototype设置为等于一个以对象字面量形式创建的新对象。最终结果相同，但于一个例外：constructor属性不再指向Person了。此时，尽管instanceof操作符还能返回正确的结果，但通过constructor已经无法确定对象的类型了，如下所示。
+{% highlight ruby %}
+var friend = new Person();
+
+alert(friend instanceof Object);		//true
+alert(friend instanceof Person);		//true
+alert(friend.constructor == Person);	//false
+alert(friend.constructor == Object);	//true
+{% endhighlight %}
+在此，用instanceof操作符测试Object和Person仍然返回true，但constructor属性则等于Object而不等于Person了。如果constructor的值真的很重要，可以像下面这样特意将它设置会适当的值。
+{% highlight ruby %}
+function Person(){
+	
+}
+
+Person.prototype = {
+	constructor: Person,
+	name: "names",
+	age: 25,
+	job: "打杂的",
+	sayName: function (){
+		alert(this.name);
+	}	
+};
+{% endhighlight %}
+以上代码特意包含了一个constructor属性，并将它的值设置为Person，从而确保了通过该属性能够访问到适当的值。
+
+原型对象的问题<br/>
+原型模式也不是没有缺点。首先，它省略了为构造函数传递初始化参数这一环节，结果所有实例在默认情况下都将取得相同的属性值。虽然这会在某种程度上带来一些不方便，但这还不是原型最大的问题。原型模式最大的问题是由其共享的本性所导致的。
+
+
+
+
+
+
+
+
 
 
 
