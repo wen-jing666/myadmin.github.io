@@ -151,7 +151,7 @@ alert(Person.prototype.isPrototypeOf(person2));		//true
 ECMAScript 5增加了一个新方法，叫Object.getPrototypeOf()，在所有支持的实现中，这个方法返回[[Prototype]]的值。例如：
 {% highlight ruby %}
 alert(Object.getPrototypeOf(person1) == Person.prototype);		//true
-alert(Object.getPrototypeOf(person1).name);						//"names"
+alert(Object.getPrototypeOf(person1).name);		//"names"
 {% endhighlight %}
 
 使用hsaOwnProperty()方法可以检测一个属性是存在于实例中，还是存在于原型中。这个方法(不要忘了它是从Object继承来的)值在给定属性存在于对象实例中时，才会返回true。来看下面这个例子。
@@ -173,7 +173,7 @@ var person2 = new Person();
 alert(person1.hasOwnProperty("name"));		//false
 
 person1.name = "names2";
-alert(person1.name);						//"names2" -- 来自实例
+alert(person1.name);	//"names2" -- 来自实例
 alert(person1.hasOwnProperty("name"));		//true
 {% endhighlight %}
 通过使用hasOwnProperty()方法，什么时候访问的是实例属性，什么时候访问的是原型属性就一清二楚了。
