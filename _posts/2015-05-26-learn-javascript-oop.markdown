@@ -34,7 +34,98 @@ person.sayName = function (){
 * [[Writable]]：表示能否修改属性的值。
 * [[Value]]：包含这个属性的数据值。
 
-要修改属性的默认的特性，必须使用ECMAScript5的Object.defineProperty()方法。
+要修改属性的默认的特性，必须使用ECMAScript5的Object.defineProperty()方法。这个方法接收三个参数：属性所在的对象、属性的名字和一个描述符对象。其中，描述符对象的属性必须是：configurable、enumerable、writable和value。如下所示：
+{% highlight ruby %}
+var person = {};
+Object.defineProperty(person, "name", {
+	writable: false,
+	value: "no names"
+});
+
+alert(person.name);		//"no names"
+person.name = "names";
+alert(person.name);		//"no names"
+{% endhighlight %}
+以上例子创建了一个名为name的属性，它的值是"no names"，是只读的。这个属性是不可修改的。
+
+###创建对象
+
+虽然Object构造函数或对象字面量都可以用来创建单个对象，但这些方式有个明显的缺点：`使用同一个接口创建很多对象，会产生大量的重复代码。`为了解决这个问题，我们来学习使用工厂模式的一种变体。
+
+<h4>工厂模式</h4>
+工厂模式是软件工程领域一种广为人知的设计模式，这种模式抽象了创建具体对象的过程。
+{% highlight ruby %}
+function createPerson(name, age, job){
+	var o = new Object();
+	o.name = name;
+	o.age = age;
+	o.job = job;
+	o.sayName = function (){
+		aler(this.name);
+	};
+	return o;
+}
+
+var person1 = createPerson("no name", 18, "打杂");
+var person1 = createPerson("no name2", 25, "打杂2");
+{% endhighlight %}
+工厂模式虽然解决了创建多个相识对象的问题，但却没有解决对象识别的问题(怎么知道一个对象的类型)。随着javascript的发展，又一个新模式出现了。
+
+<h4>构造函数模式</h4>
+首先我们可以用构造函数模式重写一下前面的例子。
+{% highlight ruby %}
+function Person(name, age, job){
+	this.name = name;
+	this.age = age;
+	this.job = job;
+	this.sayName = function (){
+		aler(this.name);
+	};
+}
+
+var person1 = new Person("no name", 18, "打杂");
+var person2 = new Person("no name2", 25, "打杂2");
+{% endhighlight %}
+在这个例子中，Person()函数取代了createPerson()函数。Person()中的代码除了与createPerson()中相同的部分外，还存在以下不同之处：
+
+* 没有显式地创建对象；
+* 直接讲属性和方法赋给了this对象；
+* 没有return语句。
+
+此外，该函数名Person使用的是大写字母P。按照惯例，构造函数始终都应该以一个大写字母开头，而非构造函数则应该以一个小写字母开头。
+
+要创建Person的新实例，必须使用`new`操作符。以这种方式调用构造函数实际上会经历以下4个步骤：
+
+* (1)创建一个新对象；
+* (2)将构造函数的作用域赋给新对象(因此this就是指向了这个新对象)；
+* (3)执行构造函数中的代码(为这个新对象添加属性)；
+* (4)返回新对象。
+
+在前面这个例子中，`person1`和`person2`分别保存着`person`的一个不同的实例。这两个对象都有一个`constructor`(构造函数)属性，该属性指向Person，如下所示。
+{% highlight ruby %}
+alert(person1.constructor == Person);		//true
+alert(person2.constructor == Person);		//true
+{% endhighlight %}
+对象的`constructor`属性最初是用来标识对象类型的。但是，提到检测对象类型，还是`instanceof`操作符要更可靠一些。我们在这个例子中创建的所有对象既是Object的实例，同时也是Person的实例，这一点通过instanceof操作符可以得到验证。
+{% highlight ruby %}
+alert(person1 instanceof Object);		//true
+alert(person1 instanceof Person);		//true
+alert(person2 instanceof Object);		//true
+alert(person2 instanceof Person);		//true
+{% endhighlight %}
+创建自定义的构造函数意味着将来可以将它的实例标识为一种特定的类型；而这正是构造函数模式胜过工厂模式的地方。
+
+构造函数模式虽然好用，但也并非没有缺点。使用构造函数的主要问题，就是每个方法都要在每个实例上重新创建一遍。
+
+<h4>原型模式</h4>
+
+
+
+
+
+
+
+
 
 
 
