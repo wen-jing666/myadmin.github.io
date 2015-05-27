@@ -26,16 +26,15 @@ person.sayName = function (){
 
 ###属性类型
 在ECMAScript中的属性值有两种：数据属性和访问器属性。
-> 1.数据属性
->
-> 数据属性包含一个数据值的位置。在这个位置上可以读取和写入值。数据属性有4个描述其行为的特性。
->
-- [[Configurable]]：表示能否通过delete删除属性从而重新定义属性。
-- [[Enumerable]]：表示能否通过for-in循环返回属性。
-- [[Writable]]：表示能否修改属性的值。
-- [[Value]]：包含这个属性的数据值。
+####1.数据属性
+数据属性包含一个数据值的位置。在这个位置上可以读取和写入值。数据属性有4个描述其行为的特性。
 
-> 要修改属性的默认的特性，必须使用ECMAScript5的Object.defineProperty()方法。
->
+* [[Configurable]]：表示能否通过delete删除属性从而重新定义属性。*
+* [[Enumerable]]：表示能否通过for-in循环返回属性。*
+* [[Writable]]：表示能否修改属性的值。*
+* [[Value]]：包含这个属性的数据值。*
+
+要修改属性的默认的特性，必须使用ECMAScript5的Object.defineProperty()方法。
+
 
 
