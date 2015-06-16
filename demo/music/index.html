@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>music</title>
+	<link rel="stylesheet" href="css.css">
+</head>
+<body>
+<header>
+	<h1 class="title">Music</h1>
+	<ul class="type" id="type">
+		<li data-type="dot">Dot</li>
+		<li data-type="column" class="selected">Column</li>
+	</ul>
+	<p>
+		Volume <input type="range" id="volume" min="0" max="100" value="60">
+	</p>
+</header>	
+<div class="list" id="list">
+	<ul class="music-list" id="list">
+		<li title="Everybody.mp3">Everybody.mp3</li>
+		<li title="野丫头 - bae seulki.mp3">野丫头 - bae seulki.mp3</li>
+	</ul>
+</div>
+<div class="canvas" id="box"></div>
+<script type="text/javascript" src="musicVisua.js"></script>
+<script type="text/javascript" src="music.js"></script>
+</body>
+</html>
