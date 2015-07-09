@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas使用图像数据</title>
+</head>
+<body>
+<canvas id="canvas" width="540" height="960"></canvas>
+<script type="text/javascript">
+/*
+ *	getImageData(x, y, width, height);
+ */	
+
+var canvas = document.getElementById("canvas"),
+	context = canvas.getContext("2d");
+
+var image = new Image();
+image.src = "baby.jpg"; 	
+image.onload = function (){
+	context.drawImage(image, 0, 0);
+	var imageData = context.getImageData(0, 0, image.width, image.height);
+	var data = imageData.data;
+
+	for(var i = 0, len = data.length; i < len; i+=4){
+		var red = data[i],
+			green = data[i+1],
+			blue = data[i+2],
+			alpha = data[i+3];
+
+		var average = Math.floor((red + green + blue) / 3);
+		
+		data[i] = average;
+		data[i+1] = average;
+		data[i+2] = average;	
+	}
+
+	imageData.data = data;
+	context.putImageData(imageData, 0, 0);
+};	
+</script>
+</body>
+</html>
