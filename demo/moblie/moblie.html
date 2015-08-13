@@ -1,0 +1,406 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, width=device-width">
+<script type="text/javascript">
+//根据屏幕大小及dpi调整缩放和大小
+(function() {
+    var scale = 1.0;
+    var ratio = 1;
+    if (window.devicePixelRatio >= 2) {
+        scale *= 0.5;
+        ratio *= 2;
+    }
+    var text = '<meta name="viewport" content="initial-scale=' + scale + ', maximum-scale=' + scale +', minimum-scale=' + scale + ', width=device-width, user-scalable=no" />';
+    document.write(text);
+    document.documentElement.style.fontSize = 50*ratio + "px";
+})();
+/*(function() {
+    var scale = 1.0;
+    var viewport = document.getElementsByName('viewport')[0];
+    var s = scale / window.devicePixelRatio;
+    var content = "initial-scale="+s+", maximum-scale="+s+", minimum-scale="+s+", user-scalable=no";
+    viewport.setAttribute("content", content);
+	var w = window.outerWidth / 16 * window.devicePixelRatio;
+	document.documentElement.style.fontSize = w + "px";
+})();*/
+</script>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name='apple-touch-fullscreen' content='yes'>
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<header class="navbar">
+	<div class="nav-wrap-left">
+		<a href="javascript:;" class="react">
+			<span class="nav-city">北京<space></space><i class="text-icon icon-downarrow"></i></span>
+		</a>
+	</div>
+	<div class="box-search">
+		<a href="javascript:;" class="react">
+			<i class="icon-search text-icon">⌕</i>
+            <span class="single-line">输入商家/品类/商圈</span>
+		</a>
+	</div>
+	<div class="nav-wrap-right">
+		<a href="javascript:;" class="react">
+			<span class="nav-btn"><i class="text-icon"></i>我的</span>
+		</a>
+	</div>
+</header>	
+<section class="list list-in icon-wrapper">
+	<ul class="icon-list page current">
+		<li class="icon">
+			<a href="javascript:;">
+				<span class="icon-circle">吃</span>
+				<span class="icon-desc">美食</span>
+			</a>
+		</li><li class="icon">
+			<a href="javascript:;">
+				<span class="icon-circle">吃</span>
+				<span class="icon-desc">美食</span>
+			</a>
+		</li><li class="icon">
+			<a href="javascript:;">
+				<span class="icon-circle">吃</span>
+				<span class="icon-desc">美食</span>
+			</a>
+		</li><li class="icon">
+			<a href="javascript:;">
+				<span class="icon-circle">吃</span>
+				<span class="icon-desc">美食</span>
+			</a>
+		</li><li class="icon">
+			<a href="javascript:;">
+				<span class="icon-circle">吃</span>
+				<span class="icon-desc">美食</span>
+			</a>
+		</li><li class="icon">
+			<a href="javascript:;">
+				<span class="icon-circle">吃</span>
+				<span class="icon-desc">美食</span>
+			</a>
+		</li><li class="icon">
+			<a href="javascript:;">
+				<span class="icon-circle">吃</span>
+				<span class="icon-desc">美食</span>
+			</a>
+		</li><li class="icon">
+			<a href="javascript:;">
+				<span class="icon-circle">吃</span>
+				<span class="icon-desc">美食</span>
+			</a>
+		</li>	
+	</ul>
+	<ul class="icon-list page next">
+		<li class="icon">
+			<a href="javascript:;">
+				<span class="icon-circle">吃</span>
+				<span class="icon-desc">美食</span>
+			</a>
+		</li><li class="icon">
+			<a href="javascript:;">
+				<span class="icon-circle">吃</span>
+				<span class="icon-desc">美食</span>
+			</a>
+		</li><li class="icon">
+			<a href="javascript:;">
+				<span class="icon-circle">吃</span>
+				<span class="icon-desc">美食</span>
+			</a>
+		</li><li class="icon">
+			<a href="javascript:;">
+				<span class="icon-circle">吃</span>
+				<span class="icon-desc">美食</span>
+			</a>
+		</li><li class="icon">
+			<a href="javascript:;">
+				<span class="icon-circle">吃</span>
+				<span class="icon-desc">美食</span>
+			</a>
+		</li><li class="icon">
+			<a href="javascript:;">
+				<span class="icon-circle">吃</span>
+				<span class="icon-desc">美食</span>
+			</a>
+		</li><li class="icon">
+			<a href="javascript:;">
+				<span class="icon-circle">吃</span>
+				<span class="icon-desc">美食</span>
+			</a>
+		</li><li class="icon">
+			<a href="javascript:;">
+				<span class="icon-circle">吃</span>
+				<span class="icon-desc">美食</span>
+			</a>
+		</li>	
+	</ul>
+	<ul class="list-ico list">
+		<li class="active"></li><li></li>
+	</ul>
+</section>
+<section class="list gohome">
+	<a href="javascript:;">
+		<span class="apollo-icon"></span>
+		<strong class="apollo-title">上门服务</strong>
+		<span class="apollo-detail">保洁、洗车、美甲</span>
+	</a>
+</section>
+<section class="list apollo">
+	<div class="left">
+		<a href="javascript:;" class="react">
+			<span class="info">
+				<strong>我们约吧</strong>
+				<small>恋人家人好朋友</small>
+			</span>
+			<span class="imgbox">
+				<img src="http://p0.meituan.net/mmc/fe4d2e89827aa829e12e2557ded363a112289.png" style="height: 100%;">
+			</span>
+		</a>
+	</div>
+	<div class="right">
+		<div class="top">
+			<a href="javascript:;" class="react">
+				<span class="info">
+					<strong>低价超值</strong>
+					<small>十元惠生活</small>
+				</span>
+				<span class="imgbox">
+					<img src="http://p0.meituan.net/mmc/a06d0c5c0a972e784345b2d648b034ec9710.jpg" alt="">
+				</span>
+			</a>
+		</div>
+		<div class="bottom">
+			<a href="javascript:;" class="react scense">
+				<span class="info">
+					<strong>低价超值</strong>
+					<small>十元惠生活</small>
+				</span>
+				<span class="imgbox">
+					<img src="http://p1.meituan.net/mmc/08615b8ae15d03c44cc5eb9bda381cb212714.png" style="height: 100%;">
+				</span>
+			</a>
+			<a href="javascript:;" class="react mingdian">
+				<span class="info">
+					<strong>低价超值</strong>
+					<small>十元惠生活</small>
+				</span>
+				<span class="imgbox">
+					<img src="http://p0.meituan.net/mmc/a06d0c5c0a972e784345b2d648b034ec9710.jpg" style="height: 100%;">
+				</span>
+			</a>
+		</div>
+	</div>
+</section>
+<section class="list">
+	<div class="huodong-padding">
+		<div class="huodong-container flex-1 topicBig">
+			<a href="javascript:;" class="flexbox">
+				<span class="info flex-1">
+					<strong>1元吃喝玩乐</strong>
+					<small>新用户专享</small>
+				</span>
+				<span class="imgbox">
+					<img src="http://p1.meituan.net/280.0/groupop/b49185c18b5ddfb32a5c1e78dd4f18c254968.jpg" style="height: 100%;">
+				</span>
+			</a>
+		</div>
+		<div class="huodong-line flexbox">
+			<div class="huodong-container flex-1">
+				<a href="javascript:;" class="flexbox topic0">
+					<span class="info flex-1">
+						<strong>半价吃一夏</strong>
+						<small>总有一款属于你</small>
+					</span>
+					<span class="imgbox">
+						<img src="http://p0.meituan.net/280.0/groupop/aa6247080e288a4628d4d90146edbb4435749.jpg" style="height: 100%;">
+					</span>
+				</a>
+			</div>
+			<div class="huodong-container flex-1">
+				<a href="javascript:;" class="flexbox topic1">
+					<span class="info flex-1">
+						<strong>七夕惠开房</strong>
+						<small>亿元红包最爱你</small>
+					</span>
+					<span class="imgbox">
+						<img src="http://p0.meituan.net/280.0/groupop/fd0320d109a237c15b3c4aee26626ff713761.jpg" style="height: 100%;">
+					</span>
+				</a>
+			</div>
+		</div>
+		<div class="huodong-line flexbox">
+			<div class="huodong-container flex-1">
+				<a href="javascript:;" class="flexbox topic0">
+					<span class="info flex-1">
+						<strong>0元霸王餐</strong>
+						<small>夏天吃货大福利</small>
+					</span>
+					<span class="imgbox">
+						<img src="http://p1.meituan.net/280.0/groupop/8daea212153151b654b4191bd06163704069.jpg" style="height: 100%;">
+					</span>
+				</a>
+			</div>
+			<div class="huodong-container flex-1">
+				<a href="javascript:;" class="flexbox topic1">
+					<span class="info flex-1">
+						<strong>1元起秒杀</strong>
+						<small>七夕大福利</small>
+					</span>
+					<span class="imgbox">
+						<img src="http://p1.meituan.net/280.0/groupop/0782165514b8e5a042784972bb0a53d517126.jpg" style="height: 100%;">
+					</span>
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="list num3">
+	<div class="flexbox">
+		<div class="left flex-1">
+			<a href="javascript:;" class="react">
+				<span class="info">
+					<strong>七夕约会</strong>
+                	<small>用味蕾调情</small>
+				</span>
+				<span class="imgbox">
+					<img src="http://p1.meituan.net/280.0/groupop/1ae939e7195fddeed5a765153e48561611075.png" style="height: 100%;">
+				</span>
+			</a>
+		</div>
+		<div class="right flex-1">
+			<div class="top">
+				<a href="javascript:;" class="react">
+					<span class="info">
+						<strong>有哭有笑</strong>
+						<small>真实面对人生</small>
+					</span>
+					<span class="imgbox">
+						<img src="http://p0.meituan.net/280.0/groupop/1e4199c902771e30de4cda8607cdb77780828.png" style="height: 100%;">
+					</span>
+				</a>
+			</div>
+			<div class="bottom">
+				<a href="javascript:;" class="react">
+					<span class="info">
+						<strong>爱在旅途</strong>
+						<small>情定直通车</small>
+					</span>
+					<span class="imgbox">
+						<img src="http://p1.meituan.net/280.0/groupop/a68ace49efa9f2b132c1d0499230a6c499413.png" style="height: 100%;">
+					</span>
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="list">
+	<p class="list-title">猜你喜欢</p>
+	<ul class="list-box">
+		<li>
+			<a href="javascript:;" class="react">
+				<div class="dealcard">
+					<span class="dealcard-nobooking"></span>
+					<div class="dealcard-img imgbox">
+						<img src="http://p0.meituan.net/200.0/deal/9cbc5a46dc342e50a78713409e7664c826772.jpg" style="width: 100%;">
+					</div> 
+					<div class="dealcard-block-right">
+						<p class="dealcard-brand single-line">肯德基</p>
+						<p class="title text-block">[225店通用]芝士培根蛋帕尼尼1份</p>  
+						<p class="price">
+							<span class="strong">6</span>
+							<span class="strong-color">元</span>
+							<span class="tag">1元抢</span>
+							<span class="line-right">已售15578</span>
+						</p>
+					</div>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="javascript:;" class="react">
+				<div class="dealcard">
+					<span class="dealcard-nobooking"></span>
+					<div class="dealcard-img imgbox">
+						<img src="http://p0.meituan.net/200.0/deal/9cbc5a46dc342e50a78713409e7664c826772.jpg" style="width: 100%;">
+					</div> 
+					<div class="dealcard-block-right">
+						<p class="dealcard-brand single-line">肯德基</p>
+						<p class="title text-block">[225店通用]芝士培根蛋帕尼尼1份</p>  
+						<p class="price">
+							<span class="strong">6</span>
+							<span class="strong-color">元</span>
+							<span class="tag">1元抢</span>
+							<span class="line-right">已售15578</span>
+						</p>
+					</div>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="javascript:;" class="react">
+				<div class="dealcard">
+					<span class="dealcard-nobooking"></span>
+					<div class="dealcard-img imgbox">
+						<img src="http://p0.meituan.net/200.0/deal/9cbc5a46dc342e50a78713409e7664c826772.jpg" style="width: 100%;">
+					</div> 
+					<div class="dealcard-block-right">
+						<p class="dealcard-brand single-line">肯德基</p>
+						<p class="title text-block">[225店通用]芝士培根蛋帕尼尼1份</p>  
+						<p class="price">
+							<span class="strong">6</span>
+							<span class="strong-color">元</span>
+							<span class="tag">1元抢</span>
+							<span class="line-right">已售15578</span>
+						</p>
+					</div>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="javascript:;" class="react">
+				<div class="dealcard">
+					<span class="dealcard-nobooking"></span>
+					<div class="dealcard-img imgbox">
+						<img src="http://p0.meituan.net/200.0/deal/9cbc5a46dc342e50a78713409e7664c826772.jpg" style="width: 100%;">
+					</div> 
+					<div class="dealcard-block-right">
+						<p class="dealcard-brand single-line">肯德基</p>
+						<p class="title text-block">[225店通用]芝士培根蛋帕尼尼1份</p>  
+						<p class="price">
+							<span class="strong">6</span>
+							<span class="strong-color">元</span>
+							<span class="tag">1元抢</span>
+							<span class="line-right">已售15578</span>
+						</p>
+					</div>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="javascript:;" class="react">
+				<div class="dealcard">
+					<span class="dealcard-nobooking"></span>
+					<div class="dealcard-img imgbox">
+						<img src="http://p0.meituan.net/200.0/deal/9cbc5a46dc342e50a78713409e7664c826772.jpg" style="width: 100%;">
+					</div> 
+					<div class="dealcard-block-right">
+						<p class="dealcard-brand single-line">肯德基</p>
+						<p class="title text-block">[225店通用]芝士培根蛋帕尼尼1份</p>  
+						<p class="price">
+							<span class="strong">6</span>
+							<span class="strong-color">元</span>
+							<span class="tag">1元抢</span>
+							<span class="line-right">已售15578</span>
+						</p>
+					</div>
+				</div>
+			</a>
+		</li>
+	</ul>
+</section>
+</body>
+</html>
