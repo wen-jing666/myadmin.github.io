@@ -15,7 +15,7 @@
     <a href="javascript:;">Blur</a>
     <a href="javascript:;">mosaic</a>
 </div>
-<input type="file" id="img" style="margin: 20px auto; display: block;"/>
+<input type="file" id="img" style="margin: 20px auto; display: none;"/>
 <script>
 window.onload = function (){
     var canvasa = document.getElementById('canvasa')
@@ -25,15 +25,14 @@ window.onload = function (){
     ,   imgInput = document.getElementById('img')
     ;
 
-    imgInput.onchange = function () {
-        console.log(this.value);
-        var value = (this.value);
-        var image = new Image();
-        image.onload = function () {
-            canvasaContext.drawImage(image, 0, 0, canvasa.width, canvasa.height);
-        };
-        image.src = value;
+    /*imgInput.onchange = function () {
+    };*/
+
+    var image = new Image();
+    image.onload = function () {
+        canvasaContext.drawImage(image, 0, 0, canvasa.width, canvasa.height);
     };
+    image.src = 'autumn.jpg';
 
     var oBox = document.getElementById('box')
     ,   aChild = oBox.children
