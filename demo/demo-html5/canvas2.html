@@ -26,6 +26,7 @@ window.onload = function (){
     ;
 
     imgInput.onchange = function () {
+        console.log(this.value);
         var value = (this.value).slice(12);
         var image = new Image();
         image.onload = function () {
