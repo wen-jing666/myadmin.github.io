@@ -29,8 +29,8 @@ DEALINGS IN THE SOFTWARE.
        //this.node = this.context.createJavaScriptNode(bufferLen, 2, 2);
        this.node = this.context.createJavaScriptNode(bufferLen, 1, 1);
     } else {
-       //this.node = this.context.createScriptProcessor(bufferLen, 2, 2);
-       this.node = this.context.createScriptProcessor(bufferLen, 1, 1);
+       this.node = this.context.createScriptProcessor(bufferLen, 2, 2);
+       //this.node = this.context.createScriptProcessor(bufferLen, 1, 1);
     }
    
     var worker = new Worker(config.workerPath || WORKER_PATH);
@@ -48,8 +48,8 @@ DEALINGS IN THE SOFTWARE.
       worker.postMessage({
         command: 'record',
         buffer: [
-          e.inputBuffer.getChannelData(0)//,
-          //e.inputBuffer.getChannelData(1)
+          e.inputBuffer.getChannelData(0),
+          e.inputBuffer.getChannelData(1)
         ]
       });
     };
