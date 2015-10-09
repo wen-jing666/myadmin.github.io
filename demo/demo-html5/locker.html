@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+        #tips {
+            margin-top: 10px;
+            text-align: center;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+<canvas id="myCanvas"></canvas>
+<div id="tips">请绘制手势密码</div>
+<script type="text/javascript">
+    var R = 26,			//小圆半径
+        CW = 400,		//初始化画布宽度
+        CH = 320,		//初始化画布高度
+        OffsetX = 30,	//画布左外边距
+        OffsetY = 30,	//画布右外边距
+        count = 0;		//绘制次数
+    var aNinePoint = [],	//9个点的位置
+        aRes1 = [];			//第一次的结果
+    var tips = document.getElementById("tips");
+    var c = document.getElementById("myCanvas");
+
+    window.onload = function() {
+        CW = document.body.offsetWidth;
+        c.width = CW;
+        c.height = CH;
+        var cxt = c.getContext("2d");
+        //两个圆之间的外距离	X：水平距离	Y：垂直距离
+        var X = (CW - 2 * OffsetX - R * 2 * 3) / 2;
+        var Y = (CH - 2 * OffsetY - R * 2 * 3) / 2;
+        aNinePoint = funCaculatePointLocation(X, Y);
+        funInit(cxt);
+        funDraw(cxt, aNinePoint, [], null);
+    };
+
+    function funCaculatePointLocation(diffX, diffY) {
+        var Re = [];
+        for (var row = 0; row < 3; row++) {
+            for (var col = 0; col < 3; col++) {
+                var Point = {
+                    X: (OffsetX + col * diffX + (col * 2 + 1) * R),
+                    Y: (OffsetY + row * diffY + (row * 2 + 1) * R)
+                };
+                Re.push(Point);
+            }
+        }
+        return Re;
+    }
+
+    function funInit(cxt) {
+        var aLinePoint = [];
+        c.addEventListener("touchstart", function(e) {
+            funIsPointSelect(e.touches[0], aLinePoint);
+        }, false);
+        c.addEventListener("touchmove", function(e) {
+            e.preventDefault();
+            var touches = e.touches[0];
+            funIsPointSelect(touches, aLinePoint);
+            cxt.clearRect(0, 0, CW, CH);
+            funDraw(cxt, aNinePoint, aLinePoint, {
+                X: touches.pageX,
+                Y: touches.pageY
+            });
+        }, false);
+        c.addEventListener("touchend", function(e) {
+            cxt.clearRect(0, 0, CW, CH);
+            funDraw(cxt, aNinePoint, [], null);
+            if (count === 0) {
+                if (aLinePoint.length < 4) {
+                    tips.innerHTML = "密码太短，最少4位，请重新设置";
+                } else {
+                    aRes1 = aLinePoint;
+                    count ++;
+                    tips.innerHTML = "请再次绘制解锁图案";
+                }
+            } else {
+                if (aLinePoint.toString() != aRes1.toString()) {
+                    count = 0;
+                    tips.innerHTML = "与上一次输入不一致，请重新设置";
+                } else {
+                    tips.innerHTML = "设置成功";
+                }
+            }
+            aLinePoint = [];
+        }, false);
+    }
+
+    function funDraw(cxt, aNinePoint, aLinePoint, touchPoint) {
+        if (aLinePoint.length > 0) {
+            cxt.beginPath();
+            for (var i = 0; i < aLinePoint.length; i++) {
+                var pointIndex = aLinePoint[i];
+                cxt.lineTo(aNinePoint[pointIndex].X, aNinePoint[pointIndex].Y);
+            }
+            cxt.lineWidth = 6;
+            cxt.strokeStyle = "#627eed";
+            cxt.stroke();
+            cxt.closePath();
+            if (touchPoint != null) {
+                var lastPointIndex = aLinePoint[aLinePoint.length - 1];
+                var lastPoint = aNinePoint[lastPointIndex];
+                cxt.beginPath();
+                cxt.moveTo(lastPoint.X, lastPoint.Y);
+                cxt.lineTo(touchPoint.X, touchPoint.Y);
+                cxt.stroke();
+                cxt.closePath();
+            }
+        }
+        for (var i = 0; i < aNinePoint.length; i++) {
+            var Point = aNinePoint[i];
+            cxt.fillStyle = "#627eed";
+            cxt.beginPath();
+            cxt.arc(Point.X, Point.Y, R, 0, Math.PI * 2, true);
+            cxt.closePath();
+            cxt.fill();
+            cxt.fillStyle = "#ffffff";
+            cxt.beginPath();
+            cxt.arc(Point.X, Point.Y, R - 3, 0, Math.PI * 2, true);
+            cxt.closePath();
+            cxt.fill();
+            if (aLinePoint.indexOf(i) >= 0) {
+                cxt.fillStyle = "#627eed";
+                cxt.beginPath();
+                cxt.arc(Point.X, Point.Y, R - 16, 0, Math.PI * 2, true);
+                cxt.closePath();
+                cxt.fill();
+            }
+        }
+    }
+
+    function funIsPointSelect(touches, aLinePoint) {
+        for (var i = 0; i < aNinePoint.length; i++) {
+            var currentPoint = aNinePoint[i];
+            var xdiff = Math.abs(currentPoint.X - touches.pageX);
+            var ydiff = Math.abs(currentPoint.Y - touches.pageY);
+            var dir = Math.pow((xdiff * xdiff + ydiff * ydiff), 0.5);
+            if (dir < R) {
+                if (aLinePoint.indexOf(i) < 0) {
+                    aLinePoint.push(i);
+                }
+            }
+        }
+    }
+</script>
+</body>
+
+</html>
