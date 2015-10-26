@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>demo</title>
+<style type="text/css">
+*{margin: 0; padding: 0;}
+body,html{width: 100%; height: 100%; overflow: hidden;}
+#box{width: 100%; height: 100%; position: relative;}
+#box .wrap{width: 100%; height: 100%; position: absolute; top: 0;}
+#box .wrap .box{width: 100%; height: 100%; position: absolute; font-size: 100px; text-align: center; line-height: 300px;}
+.ma-1{background: #ccc; left: 0; top: 0;}
+.ma-2{background: #fcc; left: 0; top: 100%;}
+.ma-3{background: #ccf; left: 0; top: 200%;}
+.ma-4{background: #ddf; left: 0; top: 300%;}
+.ma-5{background: #cdd; left: 0; top: 400%;}	
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/plugins/ScrollToPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/plugins/KineticPlugin.min.js"></script>
+<script src="jquery-1.8.3.min.js"></script>
+<script src="jquery.mousewheel.js"></script>
+</head>
+<body>
+<div id="box">
+	<div class="wrap">
+		<section class="ma-1 box">1</section>
+		<section class="ma-2 box">2</section>
+		<section class="ma-3 box">3</section>
+		<section class="ma-4 box">4</section>
+		<section class="ma-5 box">5</section>
+	</div>
+</div>	
+<script type="text/javascript">
+$(function (){
+	var tl = new TimelineLite();
+	var iNow = 0;
+	var len = $(".box").size();
+	var bSign = true, bSign2= true;
+	$('.wrap').bind('mousewheel', function(event, delta) {
+        var dir = delta > 0 ? 'Up' : 'Down',
+            vel = Math.abs(delta);
+        
+		if (dir == 'Down') {
+			iNow++;
+
+			if(iNow > len - 1){
+				iNow = len -1;
+			} 
+
+			if(bSign){
+				bSign = false;
+				tl.to($(this), 1, {
+					x: 0, 
+					y: (-100 * iNow) + '%', 
+					onComplete: function (){
+						bSign = true;
+					}
+				});
+			}
+		} else {
+			iNow--;
+
+			if(iNow < 0){
+				iNow = 0;
+			}
+
+			if(bSign2){
+				bSign2 = false;
+				tl.to($(this), 1, {
+					x: 0, 
+					y: (-100 * iNow) + '%', 
+					onComplete: function (){
+						bSign2 = true;
+					}
+				});
+			}
+		}
+
+        return false;
+    });
+});
+</script>
+</body>
+</html>
