@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Examples</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <link href="css/calendar.css" rel="stylesheet">
+  <style>
+	  input{width:120px;height:30px;border:1px solid #333;}
+	  li{width:100%;overflow: hidden;}
+  </style>
+  <script src="js/date.js"></script>
+</head>
+<body>
+  <ul>
+    <li>
+      <input type="text" id="val">
+      <div id="tdn_calendar"></div>
+    </li>
+    <li>
+      <div id="tdn_calendar1"></div>
+    </li>
+    <li>maxDate:"2015-11-26"；显示到的最大日期
+      <div id="tdn_calendar2"></div>
+    </li>
+    <li>minDate:"2015-09-24";maxDate:"2015-10-26"显示最小日期到最大日期
+      <div id="tdn_calendar3"></div>
+    </li>
+    <li>conut:2;minDate:"2015-09-24";maxDate:"2016-01-26"
+      <div id="tdn_calendar4"></div>
+    </li>
+    <li>conut:2;
+      <div id="tdn_calendar5"></div>
+    </li>
+    </li>
+  </ul>
+
+  <script src="js/calendar.js"></script>
+  <script>
+
+  tdnCalendar({
+    count:1,firstDayOfWeek:0,special:true,insertPlace:document.getElementById("tdn_calendar"),
+    jsonData:json,addEvent:function(data){
+              document.getElementById("val").value=data;
+            }
+    });
+
+   tdnCalendar({count:1,firstDayOfWeek:1,special:true,minDate:"now",insertPlace:document.getElementById("tdn_calendar1")});
+
+   tdnCalendar({count:1,firstDayOfWeek:1,special:true,maxDate:"2015-11-26",insertPlace:document.getElementById("tdn_calendar2")});
+   tdnCalendar({count:1,firstDayOfWeek:1,special:true,minDate:"2015-09-24",maxDate:"2015-11-26",insertPlace:document.getElementById("tdn_calendar3")});
+    tdnCalendar({count:2,firstDayOfWeek:1,special:true,minDate:"2015-09-24",maxDate:"2015-11-26",insertPlace:document.getElementById("tdn_calendar4")});
+    tdnCalendar({count:2,firstDayOfWeek:1,special:true,insertPlace:document.getElementById("tdn_calendar5")});
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+@charset "UTF-8";
+
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2015-09-21 13:28:59
+ * @version $Id$
+ */
+* {
+	margin: 0;
+	padding: 0;
+}
+li {
+	list-style: none;
+}
+h1, h2, h3, h4, h5, h6, em {
+	font-style: normal;
+	font-size: 14px;
+	font-weight: normal;
+}
+img {
+	border: 0;
+	vertical-align: top;
+}
+button, html input[type=button], input[type=reset], input[type=submit] {
+	-webkit-appearance: button;
+	cursor: pointer
+}
+button, input {
+	border: 0;
+	outline: none;
+}
+body {
+	font-family: "Microsoft yahei";
+	line-height: 1.5;
+	font-size: 14px;
+}
+.clearfix {
+	zoom: 1;
+}
+.clearfix:after {
+	content: "";
+	display: block;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	clear: both;
+}
+#tdn-claendar {
+	width: 600px;
+	margin: 10px auto;
+}
+
+/*日历样式*/
+.tdn-calendar {
+	padding: 0 5px;/*border:1px solid #333;*/
+	float: left;
+	overflow: hidden;
+	position: relative;
+	background: #fff;
+}
+.tdn-calendar:after {
+	content: "";
+	display: block;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	clear: both;
+}
+.tdn-prev, .tdn-next {
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	top: 1px;
+	background: #6495ED;
+	color: #fff;
+	font-family: initial;
+	font-weight: bold;
+}
+.tdn-prev {
+	left: 5px;
+}
+.tdn-next {
+	right: 5px;
+}
+.tdn-cal-main {
+	width: 476px;
+	border: 1px solid #6495ED;
+	float:left;
+	/*margin-right: 10px;*/
+}
+.tdn-cal-title {
+	width: 100%;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	background: #5183DB;
+	color: #fff;
+}
+.tdn-cal-title em {
+	font-weight: 600;
+	font-size: 16px;
+}
+.tdn-select {
+	width: 60px;
+	height: 20px;
+	background:#fff;
+	display:none;
+}
+.tdn-select .range-year{
+	width:30px;
+	height:20px;
+	float:left;
+	color:#333;
+	font-size: 12px;
+	cursor:pointer;
+}
+.tdn-hide{
+	display:none;
+}
+.tdn-weeks {
+	width: 100%;
+	height: 24px;
+	line-height: 24px;
+	overflow: hidden;
+}
+.tdn-weeks .tdn-week {
+	float: left;
+	width: 68px;
+	border-left: 1px solid #D6D5D5;/* border-left: 1px solid #5784D5 */
+	margin-left: -1px;
+	text-align: center;
+	font-weight: 600;
+	font-size:16px;
+	font-family: "Simsun";
+}
+.tdn-days {
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+.tdn-days .tdn-day,
+.tdn-days .tdn-day-out{
+	width: 68px;
+	height: 60px;
+	float: left;
+	border-top: 1px solid #D6D5D5;/*border-top: 1px solid #5784D5;*/
+	border-left: 1px solid #D6D5D5;/* border-left: 1px solid #5784D5; */
+	margin-left: -1px;
+}
+.tdn-days .tdn-date,.tdn-days .tdn-holiday,.tdn-days .tdn-detail{
+	width:100%;
+	height:20px;
+	line-height: 20px;
+	text-align: center;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+}
+.tdn-days .tdn-date{
+	font-family: "Arial";
+	font-size: 18px;
+	cursor:pointer;
+}
+.tdn-days .tdn-holiday{
+	font-size: 12px;
+	display: block;
+	color:red;
+	cursor:pointer;
+}
+.tdn-days .tdn-detail{
+	font-size: 12px;
+	display: block;
+}
+.tdn-today{background:#D3D3D3;}
+.tdn-day-out .tdn-date{
+	color:#e3e3e3;
+}
+.tdn-day-out .tdn-holiday{
+	color:#e3e3e3;
+}
+.tdn-day-out .tdn-detail{
+	color:#fff;
+}
+
+
+
+
+
+
