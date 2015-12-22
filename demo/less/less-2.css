@@ -1,0 +1,19 @@
+.color-red {
+  background: #ffccee;
+  color: #fff;
+}
+.marginOut {
+  margin: 10px;
+}
+#header {
+  border-radius: 5px;
+  background: #ffccee;
+  color: #fff;
+  margin: 10px;
+}
+#footer {
+  border-radius: 10px;
+  background: #ffccee;
+  color: #fff;
+  margin: 10px;
+}

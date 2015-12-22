@@ -1,0 +1,24 @@
+@color1: #ffccee;
+@color2: #fff;
+
+.rounded-corners (@radius: 5px) {
+	border-radius: @radius;
+}
+.color-red{
+	background: @color1;
+	color: @color2;
+}
+.marginOut{
+	margin: 10px;
+}
+
+#header{
+	.rounded-corners;
+	.color-red;
+	.marginOut;
+}
+#footer{
+	.rounded-corners(10px);
+	.color-red;
+	.marginOut;
+}

@@ -1,0 +1,14 @@
+#header h1 {
+  font-size: 26px;
+  font-weight: bold;
+  background: #f62;
+}
+#header p {
+  font-size: 14px;
+}
+#header p a {
+  text-decoration: none;
+}
+#header p a:hover {
+  border: 1px dotted #f62;
+}

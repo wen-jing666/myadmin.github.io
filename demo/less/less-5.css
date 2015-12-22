@@ -1,0 +1,118 @@
+.public-class {
+  width: 980px;
+  margin: 0 auto;
+}
+.public-border {
+  border: 1px solid #ccd;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.box {
+  height: 30px;
+  border: 1px solid #ccc;
+  width: 980px;
+  margin: 0 auto;
+  box-shadow: 1px 1px 1px #fcd233;
+  -webkit-box-shadow: 1px 1px 1px #fcd233;
+}
+.box .list-box {
+  width: 980px;
+  height: 30px;
+  line-height: 30px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.box .list-box li {
+  float: left;
+  height: 30px;
+  padding: 0 10px;
+  cursor: pointer;
+  margin-left: -1px;
+  border-left: 1px solid #ccd;
+}
+.box .list-box .active {
+  background: #ffc;
+}
+.content {
+  width: 980px;
+  margin: 0 auto;
+  margin-top: 10px;
+  overflow: hidden;
+}
+.content .left {
+  float: left;
+  border: 1px solid #ccd;
+  width: 718px;
+  height: 500px;
+  margin-right: 10px;
+}
+.content .right {
+  float: right;
+  border: 1px solid #ccd;
+  width: 248px;
+  height: 500px;
+}
+.left-content {
+  float: left;
+  border: 1px solid #ccd;
+  width: 718px;
+  height: 500px;
+  margin-right: 10px;
+}
+.right-content {
+  float: right;
+  border: 1px solid #ccd;
+  width: 248px;
+  height: 500px;
+}
+.footer {
+  width: 980px;
+  margin: 0 auto;
+  border: 1px solid #ccd;
+  margin-top: 10px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+}
+.class1 {
+  background-color: black;
+  color: #ddd;
+}
+.class2 {
+  background-color: white;
+  color: #333;
+}
+.header {
+  color: #ffc;
+}
+.header .navigation {
+  font-size: 14px;
+}
+.header .logo {
+  width: 300px;
+}
+.header .logo:hover {
+  text-decoration: none;
+}
+#bundle .tab {
+  float: left;
+  padding: 0 10px;
+  line-height: 30px;
+}
+#bundle .citation {
+  background-color: #ffc;
+}
+#header a {
+  color: #ccd;
+  display: block;
+  border: 1px solid #ccd;
+  background-color: #ffc;
+}
+#header a:hover {
+  background-color: white;
+}

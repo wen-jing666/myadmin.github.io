@@ -1,0 +1,19 @@
+@the-border: 1px;
+@base-color: #111;
+@red: #842210;	
+
+#header {
+	color: @base-color * 3;
+	border-left: @the-border;
+	border-right: @the-border * 2;
+	border-width: 4px;
+	border-color: @base-color * 6;
+}
+
+#footer {
+	color: @base-color + #003300;
+	border-color: desaturate(@red, 10%);
+	border-style: dotted;
+	border-width: 3px;
+	text-align: center;
+}
