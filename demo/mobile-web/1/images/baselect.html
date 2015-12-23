@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta name="viewport" content="width=640,target-densitydpi=device-dpi,user-scalable=no" />
+	<meta charset="UTF-8">
+	<title>植村秀</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css?v1">
+	<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+  <script type="text/javascript" src="js/WXShare.js"></script>
+  <script type="text/javascript" src="js/iscroll.min.js"></script>
+	<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?9cc31baa4594300d6177cb72f5753c11";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+	</script>
+</head>
+<body>
+	
+	<div id="wrap">
+		
+		<section class="section section1">
+			<div class="con">
+				
+			<h3>专柜预约情况</h3>
+				<ul class="form">
+					<li><span class="label">城市：</span><span class="inpt"><select id="city"><option value="">请选择城市</option></select></span></li>
+					<li><span class="label">专柜：</span><span class="inpt"><select id="zhuangui"><option value="">请选择专柜</option></select></span></li>
+					<li class="w"><span class="label">预约日期：</span><span class="inpt"><input type="date" id="datetime"></span></li>
+					<li class="w"><span class="label">服务项目：</span><span class="inpt"><select  id="xm"><option value="1">15分钟快速眉妆</option><option value="2">30分钟精细眉妆</option></select></span></li>
+				</ul>
+				<a class="sub-btn">确 认 查 询</a>
+
+			</div>
+		</section>
+
+
+<section class="section section11 hide" id="scroll" style=" background:#000;">
+				<div class="scroll" id="s">
+				<h3 style="color: red;text-align: center; margin-top: 2%;">专柜预约列表</h3>
+				</div>
+		</section>
+		
+	</div>
+
+
+	<script type="text/javascript" src="js/vendor/zepto.min.js"></script>
+	<script type="text/javascript" src="js/main.js?v1"></script>
+	<script type="text/javascript">
+		$(function() {
+			$.post('../isauth.php',function(data){
+				if(data.result == "success") {
+					BaSelect.init();
+					wx.hideOptionMenu();
+				} else {
+					window.location.href = '../index.php?retURL=reservation/baselect.html';
+				}
+			},'json');
+		});
+	</script>
+</body>
+</html>

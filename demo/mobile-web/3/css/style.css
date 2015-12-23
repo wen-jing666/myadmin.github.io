@@ -1,0 +1,205 @@
+body,
+html,
+h1,
+h2,
+h3,
+h4,
+h5,
+div,
+p,
+ul,
+ol,
+li,
+img,
+span,
+strong,
+header,
+footer,
+section,
+nav {
+  margin: 0;
+  padding: 0;
+}
+img,
+iframe,
+acronym {
+  border: 0;
+}
+ol,
+ul,
+li {
+  list-style: none;
+}
+img,
+input,
+label,
+button {
+  vertical-align: middle;
+}
+a {
+  text-decoration: none;
+}
+html,
+body {
+  background: #f9e7b1;
+  height: 100%;
+}
+#main {
+  width: 640px;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  height: 100%;
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  perspective: 800px;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -background: url(../images/bg1.jpg) no-repeat;
+  background-size: 100% 100% !important;
+}
+body,
+input {
+  font-family: 'Microsoft YaHei UI', 'Microsoft Yahei', 'Microsoft Jhenghei', helvetica, tahoma, arial, sans-serif;
+}
+/**public**/
+/**class**/
+.ovf {
+  overflow: hidden;
+}
+.loadingAni {
+  -webkit-animation: load 1.2s infinite ease-in-out;
+  animation: load 1.2s infinite ease-in-out;
+}
+.abso {
+  position: absolute;
+}
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+/**animation**/
+/****/
+.loading {
+  background-color: #fff;
+}
+.loading .spinner > div {
+  background-color: #d7271a;
+}
+.loading p {
+  color: #d7271a;
+}
+.box-step {
+  background-size: 100% 100% !important;
+  display: none;
+}
+.box-step .list-box {
+  width: 100%;
+  height: 98.2%;
+  left: 0;
+  position: absolute;
+}
+.box-step img {
+  position: absolute;
+}
+.list-wp-1 {
+  background: #def4f6;
+}
+.list-wp-2 {
+  background: url(../images/bg2.jpg) no-repeat;
+}
+.list-wp-2 .s2_2 {
+  height: 823px;
+}
+.list-wp-3 {
+  background: url(../images/bg3.jpg) no-repeat;
+}
+.list-wp-3 .s3_2 {
+  width: 606px;
+  height: 974px;
+}
+.list-wp-3 .pingg1 {
+  left: 50%;
+  margin-left: -18px;
+  bottom: 490px;
+  z-index: 2;
+  display: none;
+}
+.list-wp-3 .pingg2 {
+  width: 28px;
+  left: 50%;
+  margin-left: -14px;
+  bottom: 527px;
+  display: none;
+}
+.list-wp-3 .luo1 {
+  animation: 1s linear 0s normal none infinite luo;
+  -webkit-animation: 1s linear 0s normal none infinite luo;
+}
+.list-wp-3 .luo2 {
+  animation: 1s linear .5s normal none infinite luo;
+  -webkit-animation: 1s linear .5s normal none infinite luo;
+}
+@keyframes luo {
+  0% {
+    transform: translateY(-60px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes luo {
+  0% {
+    -webkit-transform: translateY(-60px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+  }
+}
+.s1_1 {
+  left: 50%;
+  top: 52%;
+  margin: -420px 0 0 -272px;
+  z-index: 2;
+}
+.s1_2 {
+  width: 606px;
+  height: 742px;
+  left: 50%;
+  bottom: 0;
+  margin-left: -304px;
+  overflow: hidden;
+  position: absolute;
+}
+.s1_2 > img {
+  left: 0;
+  top: 0;
+}
+.s1_3 {
+  left: 50%;
+  bottom: 8%;
+  margin-left: -202px;
+}
+.s2_3 {
+  left: 50%;
+  bottom: 7%;
+  margin-left: -244px;
+}
+.s3_3 {
+  left: 50%;
+  bottom: 4%;
+  margin-left: -190px;
+}
+.UP_ico {
+  background-image: url(../images/UP.png);
+  width: 50px;
+  height: 46px;
+  left: 302px;
+  bottom: 20px;
+  z-index: 999999;
+  position: absolute;
+}

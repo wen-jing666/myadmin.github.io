@@ -1,0 +1,705 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/index.css" type="text/css" rel="stylesheet" />
+<link href="css/animations.css" type="text/css" rel="stylesheet" />
+<link href="css/swiper.min.css" type="text/css" rel="stylesheet" />
+<meta name="viewport" content="width=640,target-densitydpi=device-dpi,user-scalable=no" />
+<title>奥迪A6L驭见女神</title>
+</head>
+<body>
+<!--浮层-->
+<div class="ajaxloading"></div>
+
+
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+<style>
+.sound-on { width:45px; height:45px; position:fixed; z-index:999; left:10px; bottom:10px; background:url(images/v.png); cursor:pointer; display:none;}
+.sound-off { background:url(images/v.png) right; display:none;}
+
+
+.sharebox { background:url(images/sharebox.png) no-repeat center top rgba(0,0,0,0.7); width:100%; height:100%; position:absolute; left:0; top:0; z-index:999;}
+
+</style>
+<span class="sound-on"></span>
+
+
+
+<div class="sharebox" style="display:none;" onTouchend="$(this).fadeOut();"></div>
+
+
+
+
+<div style="position:absolute; left:-9999px; top:-9999px">
+	 <audio id="sound0" src="mp3/laidian.mp3" preload="preload" loop></audio>
+	 <audio id="soundbj" src="mp3/music.mp3" preload="preload" loop></audio>
+     
+     
+	 <audio id="soundcar" src="mp3/car.mp3" preload="preload"></audio>
+     
+	 <audio id="sound1" src="mp3/1.mp3" preload="preload"></audio>
+	 <audio id="sound2" src="mp3/2.mp3" preload="preload"></audio>
+	 <audio id="sound3" src="mp3/3.mp3" preload="preload"></audio>
+     
+	 <audio id="sound5" src="mp3/maojiao.mp3" preload="preload"></audio>
+	 <audio id="soundbtn" src="mp3/btn.mp3" preload="preload"></audio>
+     
+     
+	 <audio id="sound4" src="mp3/anquandai.mp3" preload="preload" loop></audio>
+     
+     
+</div>
+
+
+<style>
+.spinner > div { background-color:  rgb(231,22,53);}
+#loading { background:#fff;}
+#loading P {color: rgb(231,22,53);}
+</style>
+
+<div class="loading" id="loading" style="display:block;">
+	<div class="spinner">
+		  <div class="rect1"></div>
+		  <div class="rect2"></div>
+		  <div class="rect3"></div>
+		  <div class="rect4"></div>
+		  <div class="rect5"></div>
+		</div>
+		<p></p>
+ </div>
+
+<div class="box-content" id="main">
+	
+    
+    
+    <img src="images/xin.png" class="xin" />
+
+	
+	<div class="box-step zhuquan1"  style="display:block">
+           <span class="s1-1"></span>
+           <span class="s1-2">
+              <img src="images/0-2-2.png"/>
+              <img src="images/0-2-3.png"/>
+              <span class="start-btn"></span>
+              
+              
+           </span>
+    </div>
+    <div class="box-step zhuquan2">
+       <span class="s2-1">00:00</span>
+       <span class="s2-2"></span>
+       <span class="s2-3"></span>
+    </div>
+    <div class="box-step zhuquan3">
+        <img src="images/logo1.png" class="logo1"/>
+        <img src="images/logo2.png" class="logo2"/>
+        <span class="s3-1">
+        	<img src="images/2-1.png">
+            <img src="images/2-11.png">
+            <img src="images/2-12.png">
+        </span>
+        <div class="s3-2">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="images/2-car1.png"/></div>
+                    <div class="swiper-slide"><img src="images/2-car2.png"/></div>
+                    <div class="swiper-slide"><img src="images/2-car3.png"/></div>
+                    <div class="swiper-slide"><img src="images/2-car4.png"/></div>
+                    <div class="swiper-slide"><img src="images/2-car5.png"/></div>
+                </div>
+                <!-- Add Navigation -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+        </div>
+        <span class="s3-3"></span>
+    </div>
+    <div class="box-step zhuquan4">
+   		
+        
+        
+        
+        
+        <div class="road">
+        	<img src="images/road2.jpg" class="road2"  height="3500" />
+        	<img src="images/road.jpg" class="road1" height="1100" />
+        </div>
+        
+        
+        
+        
+        
+        
+        
+         
+    
+        <img src="images/logo1.png" class="logo1"/>
+        <img src="images/logo2.png" class="logo2"/>
+        <span class="shade-bt"></span>
+        <span class="car">
+           <img src="images/car-light.png" class="light" style="display:none;"/><!--前灯-->
+           <img src="images/car-light-after.png" class="light-b shan" style="display:none;"/><!--前灯-->
+        </span>
+        <span class="s4-1"></span>
+        <span class="s4-2" style="display:none;">
+           <img src="images/3-3-1.png" style="position:absolute; z-index:22;"/>
+         	<span class="quan2"></span>
+         	<span class="quan3"></span>
+        </span>
+        <span class="s4-3" style="display:none;"></span>
+    </div> 
+    <div class="box-step zhuquan5">
+        <div class="box">
+            <span class="six">
+            	<img src="images/wave.png" class="wave-loading" style="top:160px;" />
+                <img src="images/six.png" />
+            </span>
+            <span class="s5-1">
+            	<img src="images/4-1.png" />
+            	<img src="images/4-1s.png" />
+            </span>
+        </div>  
+        <span class="upBtn UP_ico"></span>
+    </div>
+    <div class="box-step zhuquan6">
+         
+        <div class="road">
+        	<img src="images/road2.jpg" class="road2"  height="3500" />
+        	<img src="images/road.jpg" class="road1" height="1100" />
+        </div>
+        
+        
+        <img src="images/logo1.png" class="logo1"/>
+        <img src="images/logo2.png" class="logo2"/>
+        <span class="shade-bt" style="display:none;">
+        	 <span class="s6-1"></span>
+			 <span class="s6-2"></span>
+        </span>
+       
+        <span class="s6-3">
+        	<img src="images/ren.png" />
+        </span>
+        <span class="car">
+           <img src="images/car-light.png" class="light"/><!--前灯-->
+           <img src="images/car-light-after.png" class="light-b shan" style="display:none;"/><!--前灯-->
+        </span>
+    </div>
+    <div class="box-step zhuquan7"  >
+        <span class="s7-1">
+           <img src="images/6-4.png" class="shan3" style="display:none;"/><!--车灯-->
+        </span>
+        <div class="box">
+           <span class="six">
+            	<img src="images/wave.png" class="wave-loading" style="top:140px;" />
+                <img src="images/six.png" />
+            </span>
+            
+            <span class="s7-2"></span>
+            <span class="s7-3"></span>
+        </div>   
+        <span class="upBtn UP_ico" style="display:none;"></span>
+    </div>
+    <div class="box-step zhuquan8" >
+    
+    
+        <div class="road">
+        	<img src="images/road2.jpg" class="road2"  height="3500" />
+        	<img src="images/road.jpg" class="road1" height="1100" />
+        </div>
+        
+        
+        <img src="images/logo1.png" class="logo1"/>
+        <img src="images/logo2.png" class="logo2"/>
+        <span class="shade-bt" style="display:none;">
+        	 <span class="s8-1">
+               <img src="images/7-1-1.png"/>
+               <img src="images/7-1-2.png" class="shan2"/>
+            </span>
+            <span class="s8-2"></span>
+        </span>
+       
+        <span class="car">
+           <img src="images/car-light.png" class="light"/><!--前灯--><img src="images/car-light-after.png" class="light-b shan" style="display:none;"/><!--前灯-->
+        </span>
+    </div> 
+    
+    
+    <div class="box-step zhuquan9">
+    
+        <div class="box">
+        
+            <span class="six">
+            	<img src="images/wave.png" class="wave-loading" style="top:120px;" />
+                <img src="images/six.png" />
+            </span>
+            
+            <span class="s9-1"></span>
+            <span class="s9-2"></span>
+        </div>
+         <span class="upBtn UP_ico" style="display:none;"></span>
+    </div>  
+    
+    
+    <div class="box-step zhuquan10">
+        <div class="box">
+            <span class="six">
+            	<img src="images/wave.png" class="wave-loading" style="top:100px;" />
+                <img src="images/six.png" />
+            </span>
+            <span class="s10-1"></span>
+            <span class="s10-2"></span>
+        </div>
+        <span class="upBtn UP_ico" style="display:none;"></span>
+    </div>
+    
+    
+    
+    <div class="box-step zhuquan11">
+    
+     	<div class="road">
+        	<img src="images/road2.jpg" class="road2"  height="3500" />
+        	<img src="images/road.jpg" class="road1" height="1100" />
+        </div>
+        
+        
+        
+        <img src="images/logo1.png" class="logo1"/>
+        <img src="images/logo2.png" class="logo2"/>
+        <span class="shade-bt" style="display:none;">
+        	<span class="s11-1"></span>
+ 			<span class="s11-2"></span>
+        </span>
+       
+         <span class="s11-3" style="display:none;"></span>
+        <span class="car">
+           <img src="images/car-light.png" class="light"/><!--前灯-->
+           <img src="images/car-light-after.png" class="light-b shan" style="display:none;"/><!--后灯-->
+        </span>
+    </div>
+    <div class="box-step zhuquan12">
+        <div class="box">
+            <span class="six">
+            	<img src="images/wave.png" class="wave-loading" style="top:80px;" />
+                <img src="images/six.png" />
+            </span>
+            <span class="s12-1"></span>
+            <span class="s12-2"></span>
+        </div>
+        <span class="upBtn UP_ico" style="display:none;"></span>
+    </div>   
+     
+    <div class="box-step zhuquan13">
+    
+    	<div class="road">
+        	<img src="images/road2.jpg" class="road2"  height="3500" />
+        	<img src="images/road.jpg" class="road1" height="1100" />
+        </div>
+        
+        <img src="images/logo1.png" class="logo1"/>
+        <img src="images/logo2.png" class="logo2"/>
+        <span class="shade-bt" style="display:none;">
+        <span class="s13-1">
+           <img src="images/12-1-1.png"/>
+           <img src="images/12-1-2.png" class="shan2"/>
+        </span>
+        <span class="s13-3" style="display:none;"></span>
+        </span>
+        <span class="car">
+        	
+            <img src="images/yugua.png" class="yugua" />
+            <img src="images/yugua.png" style="left:67px" class="yugua" />
+            
+           <img src="images/car-light.png" class="light"/><!--前灯-->
+           <img src="images/car-light-after.png" class="light-b shan" style="display:none;"/><!--前灯-->
+        </span>
+        <span class="s13-2 s13-21"><img src="images/y1.png" /><img src="images/y2.png" /><img src="images/y3.png" /></span><!--雨-->
+        <span class="s13-2 s13-22"><img src="images/y1.png" /><img src="images/y2.png" /><img src="images/y3.png" /></span><!--雨-->
+    </div> 
+    
+    
+    
+    
+    
+    
+    
+    <div class="box-step zhuquan14" >
+    
+    
+    	<div class="road">
+        	<img src="images/road2.jpg" class="road2"  height="3500" />
+        	<img src="images/road.jpg" class="road1" height="1100" />
+        </div>
+        
+        
+        
+        <img src="images/logo1.png" class="logo1"/>
+        <img src="images/logo2.png" class="logo2"/>
+        <span class="shade-bt" style="display:none;">
+        	
+        <span class="s14-1"></span>
+        <span class="s14-2"></span>
+        </span> 
+        <span class="car">
+           <img src="images/car-light.png" class="light"/><!--前灯-->
+           <img src="images/car-light-after.png" class="light-b" style="display:none;"/><!--后灯-->
+        </span>
+        <span class="car-other">
+           <img src="images/car-light.png" style="position: absolute;left: -61px;top: -410px;"/><!--前灯-->
+           <img src="images/car-light-after.png" class="light-b shan2" style="display:none;"/><!--后灯-->
+        </span>
+    </div>
+    <div class="box-step zhuquan15">
+        <div class="box">
+            <span class="six">
+            	<img src="images/wave.png" class="wave-loading" style="top:60px;" />
+                <img src="images/six.png" />
+            </span>
+            <span class="s15-1"></span>
+            <span class="s15-2"></span>
+        </div>
+        <span class="upBtn UP_ico" style="display:none;"></span>
+    </div>   
+    <div class="box-step zhuquan16" >
+    
+    	<div class="road" style="bottom:-600px;">
+        	<img src="images/road2.jpg" class="road2"  height="3500" />
+        	<img src="images/road.jpg" class="road1" height="1100" />
+            <span class="s16-3"></span>
+        </div>
+        
+        
+        
+        <img src="images/logo1.png" class="logo1"/>
+        <img src="images/logo2.png" class="logo2"/>
+        <span class="shade-bt" style="display:none;">
+        	<span class="s16-1"></span>
+	        <span class="s16-2"></span>
+        </span>  
+        
+        <span class="car" style="right:230px; bottom:340px;">
+           <img src="images/car-light.png" class="light"/><!--前灯-->
+           <img src="images/car-light-after.png" class="light-b" style="display:none;"/><!--后灯-->
+           </span>
+    </div>      
+    
+    
+       
+    <div class="box-step zhuquan17">
+        <div class="box">
+            <span class="six">
+            	<img src="images/wave.png" class="wave-loading" style="top:30px;" />
+                <img src="images/six.png" />
+            </span>
+            <span class="s17-1"></span>
+            <span class="s17-2"></span>
+        </div>
+        <span class="upBtn UP_ico" style="display:none;"></span>
+    </div>   
+    <div class="box-step zhuquan18">
+        <div class="box">
+            <span class="six">
+            	<img src="images/wave.png" class="wave-loading" style="top:-30px;" />
+                <img src="images/six.png" />
+            </span>
+            <span class="s18-1"></span>
+            <span class="s18-2"></span>
+        </div>
+        <span class="upBtn UP_ico" style="display:none;"></span>
+    </div>   
+    <div class="box-step zhuquan19">
+            <span class="s19-1"></span>
+            <span class="s19-2"></span>
+            <span class="s19-3"></span>
+    </div>   
+</div>    
+</body>
+</html>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/zepto.min.js"></script><script>window.$$ = window.Zepto</script>
+<script src="js/self-min.js"></script>
+<script src="js/PxLoader.js"></script>
+<script src="js/weixinjs.js"></script>
+<script src="js/animate.js"></script>
+<script>
+$('#sound0')[0].play();	
+
+
+
+$$('.start-btn').tap( function (){
+	
+	
+	$('#sound0')[0].pause();	
+	$('#sound1')[0].play();
+	
+	$('#sound1')[0].onended = function (){
+		clearInterval(timer);
+		swipeUpFn( 2 , true);
+	};
+	
+	swipeUpFn( 1 , true);
+	
+	var index = 0;
+	
+	var timer = setInterval( function (){
+			index ++
+			$('.s2-1').text('00:0' + index);
+	} , 1000);
+	
+	$$('.s2-3').tap( function (){
+		$('#soundbtn')[0].play();
+		$('#sound1')[0].pause();
+		clearInterval(timer);
+		swipeUpFn( 2 , true);
+	
+	});
+	
+});
+
+
+
+$$('.s19-3').tap( function (){
+	$('#soundbtn')[0].play();
+	$('.sharebox').fadeIn();
+})
+
+
+
+
+$$('.s3-3').tap( function (){
+	$('#soundbtn')[0].play();
+	
+	swipeUpFn();
+		
+});
+
+
+
+
+function RoadRun( obj , defa_index , fn){
+	
+	
+	var road = obj.find('.road');
+	
+	
+	var index = defa_index || 0;
+	
+	var speed = 3;
+	
+	var size = 0;
+	var b = true;
+	if(defa_index) speed = 30;
+	
+	window.RoadTimer = setInterval( function (){
+		
+		
+		
+		index += speed;
+		
+		if(size ++ % 3 == 0 && b) speed ++;
+		
+		speed = Math.min(30 , speed);
+		
+		var Max = 120;
+		
+		if(defa_index == 1) Max = 100
+		
+		
+		if(size > Max && fn)
+		{
+			b = false;
+			speed -= 0.5
+			
+			if(speed == 0) {
+				clearInterval(window.RoadTimer)	
+				fn();	
+			}
+		}
+		
+		if(index >= 3450) index -= 2350;
+		
+		road[0].style[Zhu._prefixStyle('transform')] = 'translate3d(0,' + index + 'px,0)';	
+			
+	} , 30);
+	
+	
+		
+};
+
+function RoadEnd (){
+	clearInterval(window.RoadTimer)	
+};
+
+
+
+//RoadRun ($('.zhuquan4'));
+
+
+
+//sound4
+
+
+
+
+
+$$('.s4-1').one('tap', function (){
+	
+	
+	$('#soundcar')[0].play();
+	
+				
+	$(this).fadeOut();
+	
+	
+	
+	
+	setTimeout( function (){
+		
+		
+	RoadRun($('.zhuquan4') , 1 , function (){
+		
+		$('#sound4')[0].play();
+		$('.s4-2, .zhuquan4 .light-b').fadeIn();	
+		$('.s4-3 , .zhuquan4 .shade-bt').fadeOut();	
+	});
+				
+				
+	
+	
+	setTimeout( function (){
+		$('.s4-3 , .zhuquan4 .light ').fadeIn( function (){
+		
+		});
+	} , 1500)
+	
+		
+	} , 1000)
+		
+});
+
+
+
+
+$$('.s4-2').one('tap', function (){
+	$('#soundbtn')[0].play();
+	$('#sound4')[0].pause();
+	RoadEnd();
+	swipeUpFn(0 , true);
+//	RoadRun($('.zhuquan6'))
+	
+});
+
+
+$$('.s14-2').one('tap', function (){
+	$('#soundbtn')[0].play();
+	swipeUpFn(0 , true);
+	
+});
+
+
+$$('.s8-2').one('tap', function (){
+	$('#soundbtn')[0].play();
+	swipeUpFn(0 , true);
+	
+});
+
+$$('.s11-2').one('tap', function (){
+	$('#soundbtn')[0].play();
+	swipeUpFn(0 , true);
+	
+});
+
+$$('.s16-2').one('tap', function (){
+	$('#soundbtn')[0].play();
+	$('.zhuquan16 .shade-bt').fadeOut();
+	$('.zhuquan16 .car').to({bottom: 480 , transform: 'rotate(-25deg)'} , 1 , function (){
+		$('.zhuquan16 .car').to({bottom: 330 , right : 110 , transform: 'rotate(-20deg)'} , 1 , function (){
+			$('.zhuquan16 .car').to({transform: 'rotate(0deg)'} , .5 , function (){
+				
+				
+				
+				setTimeout( function (){
+					swipeUpFn(0 , true);
+				}  , 2000)
+				setTimeout( function (){
+					$('.zhuquan16 .car img').fadeOut();
+				}  , 1000)
+				
+					
+			})		
+		})	
+	})
+});
+
+
+
+$$('.s6-2').one('tap' , function (){
+	
+	
+	
+	$('#soundbtn')[0].play();
+	
+	
+	$('.zhuquan6 .light').addClass('shan2')
+	
+	setTimeout( function (){
+		if(localStorage.getItem('sound') == '1' || !localStorage.getItem('sound'))
+		{
+			$('#soundbj')[0].play();	
+		}
+	
+		swipeUpFn(0 , true);		
+	} , 600)
+	
+	//$('.sound-on').show();
+				
+	
+});
+
+
+$('.sound-on').bind('touchstart' , function ( ev){
+			ev.preventDefault();
+			ev.stopPropagation();
+			if($(this).hasClass('sound-off'))
+				{
+					localStorage.setItem('sound' , 1)	
+					
+					$(this).removeClass('sound-off');
+					 $('#soundbj')[0].play();
+					return;
+				}
+				$(this).addClass('sound-off');
+				$('#soundbj')[0].pause();
+				localStorage.setItem('sound' , 2);
+				
+});
+
+$$('.six').tap( function (){
+	$('.xin').show().from({ transform : 'scale(0)' , opacity : 0} , .8 , function (){
+		$('.xin').fadeOut();
+	})
+})
+
+
+	/*if(!localStorage.getItem('sound'))
+	{
+		$('body').one('touchstart' , function (){
+			if(localStorage.getItem('sound') == '2') return;
+			
+			$('#soundbj')[0].play();
+			
+			localStorage.setItem('sound' , 1)	
+		});
+	};*/
+	
+	if(localStorage.getItem('sound') == '1' || !localStorage.getItem('sound'))
+	{
+		//$('#soundbj')[0].play();	
+	}else
+	{
+		$('.sound-on').addClass('sound-off');
+	};
+
+
+</script>
