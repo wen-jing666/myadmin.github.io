@@ -31,10 +31,10 @@ $(function (){
 			NextStep.fadeIn(500);	
 		} , 100);*/
 
-		NowStep.cssHide(Animate_css.down.out , function (){
+		NowStep.cssHide(Animate_css.down.IN , function (){
 			Animate_Bstop = true;	
 		});
-		NextStep.cssShow(Animate_css.down.IN);
+		NextStep.cssShow(Animate_css.down.out);
 		
 		Animate_lastIndex = Animate_Index;
 		setTimeout( sliderWeb.AnimateTween , 100);
