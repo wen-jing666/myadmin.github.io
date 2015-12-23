@@ -26,10 +26,15 @@ $(function (){
 		if(index) Animate_Index = index;
 		Animate_Bstop = true;	
 
-		NowStep.fadeOut(300);
+		/*NowStep.fadeOut(300);
 		setTimeout( function (){
 			NextStep.fadeIn(500);	
-		} , 100);
+		} , 100);*/
+
+		NowStep.cssHide(Animate_css.down.out , function (){
+			Animate_Bstop = true;	
+		});
+		NextStep.cssShow(Animate_css.down.IN);
 		
 		Animate_lastIndex = Animate_Index;
 		setTimeout( sliderWeb.AnimateTween , 100);
@@ -227,19 +232,19 @@ $(function (){
 
         $(this).on('touchend.drag', function(ev) {
             var b = ev.originalEvent.changedTouches[0];
-            console.log(b.pageY, iPageY);
+            //console.log(b.pageY, iPageY);
             if (b.pageY - iPageY < 0) {
             	if(!Animate_isSwipe) return;
-				//swipeUpFn();
-				prev({
+				swipeUpFn();
+				/*prev({
 					obj: $(".box-step")
-				});
+				});*/
             } else if (b.pageY - iPageY > 0) {
             	if(!Animate_isSwipe) return;
-				//swipeDownFn();
-				next({
+				swipeDownFn();
+				/*next({
 					obj: $(".box-step")
-				});
+				});*/
             }
 
             $(this).off('.drag');
