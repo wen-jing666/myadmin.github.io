@@ -117,14 +117,13 @@ function next (opt) {
 	setTimeout(Animate, 100);
 }
 
-oBox.addEventListener('touchstart', touchstart, false);	
-oBox.addEventListener('touchend', touchend, false);	
-
 document.addEventListener('touchmove' , function (ev){
 	ev.preventDefault();
 	return false;
 } , false);
 
+oBox.addEventListener('touchstart', touchstart, false);	
+oBox.addEventListener('touchend', touchend, false);	
 
 function Animate () {
 	aList[Animate_lastIndex].style.display = 'block';
