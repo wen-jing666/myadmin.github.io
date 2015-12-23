@@ -6,6 +6,7 @@ $(function (){
 	,	Animate_css = Animate[8]
 	,	Animate_Bstop = true
 	,	TIME = .5
+	,	timer = null
 	;
 
 	function swipeUpFn(index, isFade) {
@@ -50,6 +51,62 @@ $(function (){
 		});
 		NextStep.cssShow(Animate_css.down.IN);
 		Animate_lastIndex = Animate_Index;
+		setTimeout( sliderWeb.AnimateTween , 100);
+	}
+
+	//上
+	function prev (opt) {
+		if (opt.index && opt.index == Animate_Index) return;
+		if (opt.index <= 0) return;
+		if (!Animate_Bstop) return;
+		Animate_Bstop = false;
+
+		var now = opt.obj[Animate_lastIndex]
+		,	next = opt.obj[opt.index ? opt.index : ++Animate_Index]
+		;
+
+		if (!next) {
+			Animate_Index--;
+			Animate_Bstop = true;
+			return ;
+		}
+
+		if (opt.index) {
+			Animate_Index = opt.index;
+		}
+
+		now.style.display = 'none';
+		Animate_Bstop = true;
+
+		next.style.display = 'block';
+
+		Animate_lastIndex = Animate_Index;
+
+		setTimeout( sliderWeb.AnimateTween , 100);
+	}
+
+	//下
+	function next (opt) {
+		if (Animate_lastIndex == 0) return ;
+		if (opt.index && opt.index == Animate_Index) return;
+		if (!Animate_Bstop) return;
+		Animate_Bstop = false;
+
+		var now = opt.obj[Animate_lastIndex]
+		,	next = opt.obj[opt.index ? opt.index : --Animate_Index]
+		;
+
+		if (opt.index) {
+			Animate_Index = opt.index;
+		}
+
+		now.style.display = 'none';
+		Animate_Bstop = true;
+
+		next.style.display = 'block';
+
+		Animate_lastIndex = Animate_Index;
+
 		setTimeout( sliderWeb.AnimateTween , 100);
 	}
 
@@ -173,10 +230,16 @@ $(function (){
             console.log(b.pageY, iPageY);
             if (b.pageY - iPageY < 0) {
             	if(!Animate_isSwipe) return;
-				swipeUpFn();
+				//swipeUpFn();
+				prev({
+					obj: $(".box-step")
+				});
             } else if (b.pageY - iPageY > 0) {
             	if(!Animate_isSwipe) return;
-				swipeDownFn();
+				//swipeDownFn();
+				next({
+					obj: $(".box-step")
+				});
             }
 
             $(this).off('.drag');
