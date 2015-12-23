@@ -30,11 +30,11 @@ $(function (){
 		setTimeout( function (){
 			NextStep.fadeIn(500);	
 		} , 100);*/
-
-		NowStep.cssHide(Animate_css.down.IN , function (){
-			Animate_Bstop = true;	
+		
+		NextStep.cssHide(Animate_css.up.out, function(){
+			Animate_Bstop=true
 		});
-		NextStep.cssShow(Animate_css.down.out);
+		NowStep.cssShow(Animate_css.up.IN);
 		
 		Animate_lastIndex = Animate_Index;
 		setTimeout( sliderWeb.AnimateTween , 100);
