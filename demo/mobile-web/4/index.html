@@ -244,14 +244,14 @@ $(function () {
                         });
                     } else if (iNum > 0) {
                         $(this).css({
-                            'transform', 'translate(0,'+ (iHeight * nStep) +'px) scale('+ (1 - Math.abs(nEndPageY / iHeight)) +')',
-                            'webkitTransform', 'translate(0,'+ (iHeight * nStep) +'px) scale('+ (1 - Math.abs(nEndPageY / iHeight)) +')'
+                            'transform': 'translate(0,'+ (iHeight * nStep) +'px) scale('+ (1 - Math.abs(nEndPageY / iHeight)) +')',
+                            'webkitTransform': 'translate(0,'+ (iHeight * nStep) +'px) scale('+ (1 - Math.abs(nEndPageY / iHeight)) +')'
                         });
                     }
 
                     $(this).css({
-                        'transition', 'all 0.3s',
-                        'webkitTransition', 'all 0.3s',
+                        'transition': 'all 0.3s',
+                        'webkitTransition': 'all 0.3s',
                     });
                     aLi.eq(nowNextIndex).css({
                         'transform': 'translate(0, 0)',
