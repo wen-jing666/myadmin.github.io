@@ -211,16 +211,25 @@ $(function () {
 
                     if (iNum < 0) {
                         nowNextIndex = nowIndex == aLi.length - 1 ? 0 : nowIndex + 1;
-                        aLi.eq(nowNextIndex).css('transform', 'translate(0px, '+ (iHeight + touchEnd.pageY - nDownY) +'px)');
+                        aLi.eq(nowNextIndex).css({
+                            'transform': 'translate(0px, '+ (iHeight + touchEnd.pageY - nDownY) +'px)',
+                            'webkitTransform': 'translate(0px, '+ (iHeight + touchEnd.pageY - nDownY) +'px)'
+                        });
                     } else if (iNum > 0) {
                         nowNextIndex = nowIndex == 0 ? aLi.length - 1 : nowIndex - 1;
-                        aLi.eq(nowNextIndex).css('transform', 'translate(0px, '+ (-iHeight + touchEnd.pageY - nDownY ) +'px)');
+                        aLi.eq(nowNextIndex).css({
+                            'transform': 'translate(0px, '+ (-iHeight + touchEnd.pageY - nDownY ) +'px)',
+                            'webkitTransform': 'translate(0px, '+ (-iHeight + touchEnd.pageY - nDownY ) +'px)',
+                        });
                     } else {
                         bSign = true;
                     }
 
                     aLi.eq(nowNextIndex).show().addClass('active');
-                    $(this).css('transform', 'translate(0px, '+ nEndPageY +'px) scale('+ (1 - Math.abs(nEndPageY / iHeight)) +')');
+                    $(this).css({
+                        'transform': 'translate(0px, '+ nEndPageY +'px) scale('+ (1 - Math.abs(nEndPageY / iHeight)) +')',
+                        'webkitTransform': 'translate(0px, '+ nEndPageY +'px) scale('+ (1 - Math.abs(nEndPageY / iHeight)) +')',
+                    });
                 });
 
                 $(this).on('touchend.drag', function () {
@@ -229,15 +238,26 @@ $(function () {
                     ;
 
                     if (iNum < 0) {
-                        $(this).css('transform', 'translate(0,'+ (-iHeight * nStep) +'px) scale('+ (1 - Math.abs(nEndPageY / iHeight)) +')');
+                        $(this).css({
+                            'transform': 'translate(0,'+ (-iHeight * nStep) +'px) scale('+ (1 - Math.abs(nEndPageY / iHeight)) +')',
+                            'webkitTransform': 'translate(0,'+ (-iHeight * nStep) +'px) scale('+ (1 - Math.abs(nEndPageY / iHeight)) +')',
+                        });
                     } else if (iNum > 0) {
-                        $(this).css('transform', 'translate(0,'+ (iHeight * nStep) +'px) scale('+ (1 - Math.abs(nEndPageY / iHeight)) +')');
+                        $(this).css({
+                            'transform', 'translate(0,'+ (iHeight * nStep) +'px) scale('+ (1 - Math.abs(nEndPageY / iHeight)) +')',
+                            'webkitTransform', 'translate(0,'+ (iHeight * nStep) +'px) scale('+ (1 - Math.abs(nEndPageY / iHeight)) +')'
+                        });
                     }
 
-                    $(this).css('transition', 'all 0.3s');
+                    $(this).css({
+                        'transition', 'all 0.3s',
+                        'webkitTransition', 'all 0.3s',
+                    });
                     aLi.eq(nowNextIndex).css({
                         'transform': 'translate(0, 0)',
-                        'transition': 'all 0.3s'
+                        'transition': 'all 0.3s',
+                        'webkitTransform': 'translate(0, 0)',
+                        'webkitTransition': 'all 0.3s'
                     });
 
                     $(this).off('.drag');
@@ -251,7 +271,10 @@ $(function () {
 
         function resetFn() {
             //console.log(nowNextIndex);
-            aLi.css('transition', '');
+            aLi.css({
+                'transition': '',
+                'webkitTransition': ''
+            });
             aLi.eq(nowNextIndex).removeClass('active').siblings().hide();
             bSign = true;
         }
