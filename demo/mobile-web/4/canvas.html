@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+    body{background: #000;}
+    #canvas{background: #fff;}
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="600" height="600"></canvas>
+<script>
+var oC = document.getElementById("canvas")
+,   oGx = oC.getContext("2d")
+;
+
+oGx.fillStyle = "red";
+oGx.fillRect(100, 100, 100, 100);
+
+oGx.globalCompositeOperation = "destination-in";
+
+oGx.fillStyle = "blue";
+oGx.fillRect(150, 150, 100, 100);
+</script>
+</body>
+</html>
