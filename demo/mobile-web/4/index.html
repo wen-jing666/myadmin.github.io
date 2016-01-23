@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>index</title>
 <meta name="viewport" content="width=640, target-densityDpi=device-dpi, user-scalable=no"/>
-<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+<script src="jquery-2.1.3.min.js"></script>
 <style>
 *{margin: 0; padding: 0;}
 #main{
@@ -197,8 +197,8 @@ $(function () {
             if (bSign) {
                 bSign = false;
 
-                var touch = ev.originalEvent.changedTouches[0];
-                nDownY = touch.pageY;
+                var touchs = ev.originalEvent.changedTouches[0];
+                nDownY = touchs.pageY;
                 nowIndex = $(this).index();
 
                 $(this).on('touchmove.drag', function (ev) {
@@ -212,14 +212,12 @@ $(function () {
                     if (iNum < 0) {
                         nowNextIndex = nowIndex == aLi.length - 1 ? 0 : nowIndex + 1;
                         aLi.eq(nowNextIndex).css({
-                            'transform': 'translate(0px, '+ (iHeight + touchEnd.pageY - nDownY) +'px)',
-                            'webkitTransform': 'translate(0px, '+ (iHeight + touchEnd.pageY - nDownY) +'px)'
+                            'transform': 'translate(0px, '+ (iHeight + touchEnd.pageY - nDownY) +'px)'
                         });
                     } else if (iNum > 0) {
                         nowNextIndex = nowIndex == 0 ? aLi.length - 1 : nowIndex - 1;
                         aLi.eq(nowNextIndex).css({
-                            'transform': 'translate(0px, '+ (-iHeight + touchEnd.pageY - nDownY ) +'px)',
-                            'webkitTransform': 'translate(0px, '+ (-iHeight + touchEnd.pageY - nDownY ) +'px)',
+                            'transform': 'translate(0px, '+ (-iHeight + touchEnd.pageY - nDownY ) +'px)'
                         });
                     } else {
                         bSign = true;
@@ -227,8 +225,7 @@ $(function () {
 
                     aLi.eq(nowNextIndex).show().addClass('active');
                     $(this).css({
-                        'transform': 'translate(0px, '+ nEndPageY +'px) scale('+ (1 - Math.abs(nEndPageY / iHeight)) +')',
-                        'webkitTransform': 'translate(0px, '+ nEndPageY +'px) scale('+ (1 - Math.abs(nEndPageY / iHeight)) +')',
+                        'transform': 'translate(0px, '+ nEndPageY +'px) scale('+ (1 - Math.abs(nEndPageY / iHeight)) +')'
                     });
                 });
 
@@ -239,42 +236,54 @@ $(function () {
 
                     if (iNum < 0) {
                         $(this).css({
-                            'transform': 'translate(0,'+ (-iHeight * nStep) +'px) scale('+ (1 - Math.abs(nEndPageY / iHeight)) +')',
-                            'webkitTransform': 'translate(0,'+ (-iHeight * nStep) +'px) scale('+ (1 - Math.abs(nEndPageY / iHeight)) +')',
+                            'transform': 'translate(0,'+ (-iHeight * nStep) +'px) scale('+ (1 - nStep) +')'
                         });
                     } else if (iNum > 0) {
                         $(this).css({
-                            'transform': 'translate(0,'+ (iHeight * nStep) +'px) scale('+ (1 - Math.abs(nEndPageY / iHeight)) +')',
-                            'webkitTransform': 'translate(0,'+ (iHeight * nStep) +'px) scale('+ (1 - Math.abs(nEndPageY / iHeight)) +')'
+                            'transform': 'translate(0,'+ (iHeight * nStep) +'px) scale('+ (1 - nStep) +')'
                         });
                     }
 
                     $(this).css({
-                        'transition': 'all 0.3s',
-                        'webkitTransition': 'all 0.3s',
-                    });
-                    aLi.eq(nowNextIndex).css({
-                        'transform': 'translate(0, 0)',
-                        'transition': 'all 0.3s',
-                        'webkitTransform': 'translate(0, 0)',
-                        'webkitTransition': 'all 0.3s'
+                        'transition': 'all 0.3s'
                     });
 
-                    $(this).off('.drag');
+                    
+                    aLi.eq(nowNextIndex).css({
+                        'transform': 'translate(0, 0)',
+                        'transition': 'all 0.3s'
+                    });
                 });
+
+                /*aLi.on('touchend',function(ev){
+                    var touch = ev.originalEvent.changedTouches[0];
+                    if( touch.pageY < nDownY ){  //↑
+                        $(this).css('transform','translate(0,'+(-iHeight * nStep)+'px) scale('+(1-nStep)+')');
+                    }
+                    else if( touch.pageY > nDownY ){  //↓
+                        $(this).css('transform','translate(0,'+(iHeight * nStep)+'px) scale('+(1-nStep)+')');
+                    }
+                    $(this).css('transition','.3s');
+                    aLi.eq(nowNextIndex).css('transform','translate(0,0)');
+                    aLi.eq(nowNextIndex).css('transition','.3s');
+                });*/
             }
         });
 
-        aLi.on('transitionEnd webkitTransitionEnd', function () {
+        /*aLi.on('webkitTransitionEnd', function () {
             resetFn();
+        });*/
+
+        aLi.on('transitionEnd webkitTransitionEnd',function(ev){
+            
+            resetFn();
+            
         });
 
         function resetFn() {
             //console.log(nowNextIndex);
-            aLi.css({
-                'transition': '',
-                'webkitTransition': ''
-            });
+            aLi.css('transition', '');
+            aLi.css('transform', '');
             aLi.eq(nowNextIndex).removeClass('active').siblings().hide();
             bSign = true;
         }
