@@ -56,14 +56,8 @@
     margin-left: -45px;
     z-index: 3;
     animation: left 1s infinite ease;
-    -webkit-animation: left 1s infinite ease;
 }
 @keyframes left {
-    0%{transform: translate(0,42px); opacity: 0;}
-    60%{transform: translate(0,12px); opacity: 1;}
-    100%{transform: translate(0,0); opacity: 0;}
-}
-@-webkit-keyframes left {
     0%{-webkit-transform: translate(0,42px); opacity: 0;}
     60%{-webkit-transform: translate(0,12px); opacity: 1;}
     100%{-webkit-transform: translate(0,0); opacity: 0;}
@@ -197,8 +191,8 @@ $(function () {
             if (bSign) {
                 bSign = false;
 
-                var touchs = ev.originalEvent.changedTouches[0];
-                nDownY = touchs.pageY;
+                var touch = ev.originalEvent.changedTouches[0];
+                nDownY = touch.pageY;
                 nowIndex = $(this).index();
 
                 $(this).on('touchmove.drag', function (ev) {
@@ -211,22 +205,16 @@ $(function () {
 
                     if (iNum < 0) {
                         nowNextIndex = nowIndex == aLi.length - 1 ? 0 : nowIndex + 1;
-                        aLi.eq(nowNextIndex).css({
-                            'transform': 'translate(0px, '+ (iHeight + touchEnd.pageY - nDownY) +'px)'
-                        });
+                        aLi.eq(nowNextIndex).css('transform', 'translate(0px, '+ (iHeight + touchEnd.pageY - nDownY) +'px)');
                     } else if (iNum > 0) {
                         nowNextIndex = nowIndex == 0 ? aLi.length - 1 : nowIndex - 1;
-                        aLi.eq(nowNextIndex).css({
-                            'transform': 'translate(0px, '+ (-iHeight + touchEnd.pageY - nDownY ) +'px)'
-                        });
+                        aLi.eq(nowNextIndex).css('transform', 'translate(0px, '+ (-iHeight + touchEnd.pageY - nDownY ) +'px)');
                     } else {
                         bSign = true;
                     }
 
                     aLi.eq(nowNextIndex).show().addClass('active');
-                    $(this).css({
-                        'transform': 'translate(0px, '+ nEndPageY +'px) scale('+ (1 - Math.abs(nEndPageY / iHeight)) +')'
-                    });
+                    $(this).css('transform', 'translate(0px, '+ nEndPageY +'px) scale('+ (1 - Math.abs(nEndPageY / iHeight)) +')');
                 });
 
                 $(this).on('touchend.drag', function () {
@@ -235,55 +223,29 @@ $(function () {
                     ;
 
                     if (iNum < 0) {
-                        $(this).css({
-                            'transform': 'translate(0,'+ (-iHeight * nStep) +'px) scale('+ (1 - nStep) +')'
-                        });
+                        $(this).css('transform', 'translate(0,'+ (-iHeight * nStep) +'px) scale('+ (1 - Math.abs(iNum / iHeight  * nStep)) +')');
                     } else if (iNum > 0) {
-                        $(this).css({
-                            'transform': 'translate(0,'+ (iHeight * nStep) +'px) scale('+ (1 - nStep) +')'
-                        });
+                        $(this).css('transform', 'translate(0,'+ (iHeight * nStep) +'px) scale('+ (1 - Math.abs(iNum / iHeight  * nStep)) +')');
                     }
 
-                    $(this).css({
-                        'transition': 'all 0.3s'
-                    });
-
-                    
+                    $(this).css('transition', 'all 0.3s');
                     aLi.eq(nowNextIndex).css({
                         'transform': 'translate(0, 0)',
                         'transition': 'all 0.3s'
                     });
-                });
 
-                /*aLi.on('touchend',function(ev){
-                    var touch = ev.originalEvent.changedTouches[0];
-                    if( touch.pageY < nDownY ){  //↑
-                        $(this).css('transform','translate(0,'+(-iHeight * nStep)+'px) scale('+(1-nStep)+')');
-                    }
-                    else if( touch.pageY > nDownY ){  //↓
-                        $(this).css('transform','translate(0,'+(iHeight * nStep)+'px) scale('+(1-nStep)+')');
-                    }
-                    $(this).css('transition','.3s');
-                    aLi.eq(nowNextIndex).css('transform','translate(0,0)');
-                    aLi.eq(nowNextIndex).css('transition','.3s');
-                });*/
+                    $(this).off('.drag');
+                });
             }
         });
 
-        /*aLi.on('webkitTransitionEnd', function () {
+        aLi.on('transitionEnd webkitTransitionEnd', function () {
             resetFn();
-        });*/
-
-        aLi.on('transitionEnd webkitTransitionEnd',function(ev){
-            
-            resetFn();
-            
         });
 
         function resetFn() {
             //console.log(nowNextIndex);
             aLi.css('transition', '');
-            aLi.css('transform', '');
             aLi.eq(nowNextIndex).removeClass('active').siblings().hide();
             bSign = true;
         }
