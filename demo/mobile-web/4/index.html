@@ -55,9 +55,15 @@
     bottom: 50px;
     margin-left: -45px;
     z-index: 3;
+    -webkit-animation: left 1s infinite ease;
     animation: left 1s infinite ease;
 }
 @keyframes left {
+    0%{-webkit-transform: translate(0,42px); opacity: 0;}
+    60%{-webkit-transform: translate(0,12px); opacity: 1;}
+    100%{-webkit-transform: translate(0,0); opacity: 0;}
+}
+@-webkit-keyframes left {
     0%{-webkit-transform: translate(0,42px); opacity: 0;}
     60%{-webkit-transform: translate(0,12px); opacity: 1;}
     100%{-webkit-transform: translate(0,0); opacity: 0;}
