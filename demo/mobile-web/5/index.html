@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>index</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<script type="text/javascript">
+	var oHtml = document.getElementsByTagName('html')[0]
+	,	iWidth = document.documentElement.clientWidth
+	;
+
+	iWidth = iWidth > 540 ? 540 : iWidth;
+	oHtml.style.fontSize = iWidth / 16 + 'px';
+	</script>
+	<style type="text/css">
+	*{margin: 0; padding: 0; font-family: "宋体";}
+	li{list-style-type: none;}
+	a {
+    	-webkit-tap-highlight-color: rgba(255,0,0,0);
+    	text-decoration: none;
+	}
+	html,body{height: 100%;}
+	body{
+		background: #efeff4;
+		overflow: hidden;
+		position: relative;
+	}
+	.header{
+		width: 100%;
+		height: 2.2rem;
+		position: absolute;
+		background: #ef3239;
+		text-align: center;
+		box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+		left: 0;
+		top: 0;
+		z-index: 3;
+	}
+	.header > a{
+		position: absolute;
+		top: 0;
+		height: 2.2rem;
+	}
+	.menuBtn{
+		left: 0;
+		width: 2.6rem;
+		background: url(img/menuBtn.png) center no-repeat;
+		background-size: 0.775rem 0.575rem;
+	}
+	.refreshBtn{
+		right: 0;
+		width: 2.4rem;
+		background: url(img/refreshBtn.png) center no-repeat;
+		background-size: 0.675rem 0.75rem;
+	}
+	.title{
+		font: 0.85rem/2.2rem Arial;
+		vertical-align: top;
+		display: inline-block;
+		color: #fff;
+		padding-left: 0.825rem;
+		background: url(img/titleico.png) 0 0.8rem no-repeat;
+		background-size: 0.425rem 0.55rem;
+	}
+	.header > a:active{
+		background-color: #EF696E;
+	}
+	.scroll{
+		position: relative;
+		height: 100%;
+		box-sizing: content-box;
+		overflow: auto;
+		z-index: 1;
+	}
+	.scroll >*:nth-of-type(1){
+		padding-top: 2.2rem;
+		padding-bottom: 2rem;
+	}
+	.wrap{
+		width: 16rem;
+		margin: 0 auto;
+		overflow: hidden;
+	}
+	.scrollList{
+		height: 5.05rem;
+		position: relative;
+		border-top: 1px solid #fff;
+		margin-top: -1px;
+	}
+	.scrollList img{
+		width: 2.4rem;
+		height: 2.4rem;
+		border-radius: 1.2rem;
+		position: absolute;
+		left: 1.35rem;
+		top: 1.35rem;
+	}
+	.scrollList h3{
+		font: 0.8rem/1 Roboto;
+		color: #fff;
+		position: absolute;
+		left: 5.1rem;
+		top: 2.05rem;
+	}
+	.scrollList p{
+		width: 6.6rem;
+		font: 0.6rem/1 Arial;
+		position: absolute;
+		left: 9rem;
+		top: 3.95rem;
+		color: #fff;
+		display: flex;
+	}
+	.scrollList p span{
+		flex: 1;
+		text-indent: 1rem;
+	}
+	.scrollList p span:nth-of-type(1){
+		background: url(img/messageICo.png) no-repeat;
+		background-size: 0.575rem 0.55rem;
+	}
+	.scrollList p span:nth-of-type(2){
+		background: url(img/linkIco.png) no-repeat;
+		background-size: 0.55rem 0.5rem;
+	}
+	.scrollList mark{
+		position: absolute;
+		width: 2.4rem;
+		height: 0.9rem;
+		font: 0.6rem / 0.8rem "Adobe 黑体 Std";
+		text-align: center;
+		background: url(img/markBg.png) no-repeat;
+		background-size: contain;
+		top: 0;
+		right: 0.9rem;
+	}
+	.list1{background: #2aaee6;}
+	.list2{background: #00ccbe;}
+	.list3{background: #f0d81b;}
+	.list4{background: #f7931e;}
+	.list1 mark{color: #2aaee6;}
+	.list2 mark{color: #00ccbe;}
+	.list3 mark{color: #f0d81b;}
+	.list4 mark{color: #f7931e;}
+	.footer{
+		width: 100%;
+		height: 2rem;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		background: #751C1F;
+		text-align: center;
+		box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+		z-index: 3;
+	}
+	.footer h3{
+		font: 0.85rem/2rem Arial;
+		color: #fff;
+	}
+	</style>
+</head>
+<body>
+<header class="header">
+	<h1 class="title">my home</h1>
+	<a href="javascript:;" class="menuBtn"></a>
+	<a href="javascript:;" class="refreshBtn"></a>
+</header>
+<section class="scroll">
+	<div class="wrap">
+		<div class="scrollList list1">
+			<a href="javascript:;">
+				<img src="img/head.png" alt="head">
+				<h3>What About you?</h3>
+				<p>
+					<span>1234</span>
+					<span>2143</span>
+				</p>
+				<mark>服务</mark>
+			</a>
+		</div>
+		<div class="scrollList list2">
+			<a href="javascript:;">
+				<img src="img/head.png" alt="head">
+				<h3>What About you?</h3>
+				<p>
+					<span>1234</span>
+					<span>2143</span>
+				</p>
+				<mark>财经</mark>
+			</a>
+		</div>
+		<div class="scrollList list3">
+			<a href="javascript:;">
+				<img src="img/head.png" alt="head">
+				<h3>What About you?</h3>
+				<p>
+					<span>1234</span>
+					<span>2143</span>
+				</p>
+				<mark>IT</mark>
+			</a>
+		</div>
+		<div class="scrollList list4">
+			<a href="javascript:;">
+				<img src="img/head.png" alt="head">
+				<h3>What About you?</h3>
+				<p>
+					<span>1234</span>
+					<span>2143</span>
+				</p>
+				<mark>教育</mark>
+			</a>
+		</div>
+		<div class="scrollList list1">
+			<a href="javascript:;">
+				<img src="img/head.png" alt="head">
+				<h3>What About you?</h3>
+				<p>
+					<span>1234</span>
+					<span>2143</span>
+				</p>
+				<mark>服务</mark>
+			</a>
+		</div>
+		<div class="scrollList list2">
+			<a href="javascript:;">
+				<img src="img/head.png" alt="head">
+				<h3>What About you?</h3>
+				<p>
+					<span>1234</span>
+					<span>2143</span>
+				</p>
+				<mark>财经</mark>
+			</a>
+		</div>
+	</div>
+</section>
+<footer class="footer">
+	<h3>this is footer</h3>
+</footer>
+</body>
+</html>
