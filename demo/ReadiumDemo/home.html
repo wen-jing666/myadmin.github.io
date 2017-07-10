@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <script src="readium-js/readium-js_all.js"></script>
+</head>
+<body>
+
+<input id="fileInput" type="file"/>
+<div id="renderArea" style="height: 500px;width: 300px"></div>
+</body>
+<script>
+
+    $("#fileInput").on('change', function (event) {
+
+        var file = event.target.files[0];
+        var fileName = file.name;
+        // alert(fileName);
+
+        window.require(['jquery', 'readium_js/Readium'], function ($, Readium) {
+            //定义ReadiumJS阅读解析器的参数
+            //具体说明：https://github.com/readium/readium-js/blob/master/API.md
+            var readiumOptions =
+            {
+                jsLibRoot: 'readium-js/build-output/',
+                cacheSizeEvictThreshold: undefined,
+                useSimpleLoader: false, // false so we can load ZIP'ed EPUBs
+                openBookOptions: {}
+            };
+            var readerOptions =
+            {
+                needsFixedLayoutScalerWorkAround: false,
+                el: "#renderArea",
+                annotationCSSUrl: null,
+                mathJaxUrl: 'readium-js/MathJax.js'
+            };
+            //创建解析器
+            var readium = new Readium(readiumOptions, readerOptions);
+            //解析图书
+            //console.log('开始解析图书');
+            readium.openPackageDocument(
+                    file,
+                    function (packageDocument, options) {
+                        console.log("packageDocument", packageDocument.getMetadata())
+                    },
+                    null);
+            //当书中某个Document加载完成后需要进行的操作
+            readium.reader.on(window.ReadiumSDK.Events.CONTENT_DOCUMENT_LOADED, function ($iframe, spineItem) {
+                console.log("CONTENT_DOCUMENT_LOADED", $iframe)
+
+            });
+        });
+
+
+    });
+
+
+</script>
+
+</html>
