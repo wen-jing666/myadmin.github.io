@@ -1,5 +1,10 @@
 Sitemap: http://myadmin.github.io/sitemap.xml
 
 User-agent: *
+<<<<<<< HEAD
 Disallow: /assesdfts/images/
 Disallow: /resuert/
+=======
+Disallow: /assets/images/
+Disallow: /body/family
+>>>>>>> origin/master
