@@ -2,4 +2,4 @@ Sitemap: http://myadmin.github.io/sitemap.xml
 
 User-agent: *
 Disallow: /assets/images/
-Disallow: /resume/
+Disallow: /body/family
